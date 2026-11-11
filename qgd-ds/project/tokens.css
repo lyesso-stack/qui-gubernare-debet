@@ -1,0 +1,102 @@
+/* Qui gubernare debet — generated from tokens.json */
+:root, [data-theme="light"] {
+  --page: #F3F5F8;
+  --paper: #FFFFFF;
+  --paper-sunk: #E9EDF2;
+  --line: #D3DAE3;
+  --line-control: #7B8A9C;
+  --ink: #0B1B2B;
+  --ink-2: #3E4F63;
+  --ink-3: #56677B;
+  --navy: #0A2240;
+  --navy-2: #163A66;
+  --on-navy: #FFFFFF;
+  --on-navy-muted: #B9C8DB;
+  --blue: #1A5DAB;
+  --blue-soft: #E5EEF8;
+  --on-blue: #FFFFFF;
+  --link: var(--blue);
+  --gold: #86600F;
+  --gold-soft: #F6EEDB;
+  --gold-mark: #B8892B;
+  --on-gold-mark: #0B1B2B;
+  --ok: #0E6A77;
+  --ok-soft: #E0F0F2;
+  --cut: #B0401A;
+  --cut-soft: #FAE8E1;
+  --no: var(--ink-3);
+  --no-soft: #ECEFF3;
+  --viz-4: #0A2240;
+  --viz-3: #1A5DAB;
+  --viz-2: #7FA6D6;
+  --viz-1: #C9DAEE;
+  --on-viz-hi: #FFFFFF;
+  --on-viz-lo: #0B1B2B;
+  --shadow-float: 0 8px 24px #0b1b2b29;
+  --focus-ring: 0 0 0 2px #ffffff, 0 0 0 4px #1a5dab;
+}
+[data-theme="dark"] {
+  --page: #0C141E;
+  --paper: #132131;
+  --paper-sunk: #0A1119;
+  --line: #26374B;
+  --line-control: #6F8399;
+  --ink: #E9EFF6;
+  --ink-2: #B4C2D2;
+  --ink-3: #93A4B8;
+  --navy: #12305A;
+  --navy-2: #1B3E6A;
+  --on-navy: #FFFFFF;
+  --on-navy-muted: #B9C8DB;
+  --blue: #7FB4EF;
+  --blue-soft: #12304F;
+  --on-blue: #0B1B2B;
+  --link: var(--blue);
+  --gold: #E2B65C;
+  --gold-soft: #2C230F;
+  --gold-mark: #D9AE55;
+  --on-gold-mark: #0B1B2B;
+  --ok: #5CC3CF;
+  --ok-soft: #0D2B30;
+  --cut: #F2905F;
+  --cut-soft: #3A1C0F;
+  --no: var(--ink-3);
+  --no-soft: #1B2735;
+  --viz-4: #A9CBF2;
+  --viz-3: #6A9FDC;
+  --viz-2: #2F5F98;
+  --viz-1: #1E3B60;
+  --on-viz-hi: #0B1B2B;
+  --on-viz-lo: #F0F5FB;
+  --shadow-float: 0 8px 24px #000000b3;
+  --focus-ring: 0 0 0 2px #132131, 0 0 0 4px #7fb4ef;
+}
+:root {
+  --space-half: 2px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --radius-0: 0;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --page-max: 1200px;
+  --measure: 720px;
+  --font-sans: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", Consolas, "Courier New", monospace;
+}
+.display { font-family: var(--font-sans); font-size: 48px; line-height: 52px; font-weight: 600; letter-spacing: -0.02em; }
+.h1 { font-family: var(--font-sans); font-size: 32px; line-height: 40px; font-weight: 600; letter-spacing: -0.01em; }
+.h2 { font-family: var(--font-sans); font-size: 22px; line-height: 30px; font-weight: 600; }
+.h3 { font-family: var(--font-sans); font-size: 17px; line-height: 24px; font-weight: 600; }
+.lead { font-family: var(--font-sans); font-size: 19px; line-height: 30px; font-weight: 400; }
+.body { font-family: var(--font-sans); font-size: 16px; line-height: 26px; font-weight: 400; }
+.body-sm { font-family: var(--font-sans); font-size: 14px; line-height: 22px; font-weight: 400; }
+.overline { font-family: var(--font-sans); font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; }
+.figure { font-family: var(--font-sans); font-size: 36px; line-height: 40px; font-weight: 600; letter-spacing: -0.01em; }
+.caption { font-family: var(--font-sans); font-size: 13px; line-height: 18px; font-weight: 400; }
+.code { font-family: var(--font-mono); font-size: 13px; line-height: 20px; font-weight: 400; }

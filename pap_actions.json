@@ -1,0 +1,490 @@
+[
+{
+"code": "140",
+"label": "Enseignement scolaire public du premier degré",
+"ae25": 27469524090,
+"ae26": 27909445801,
+"cp25": 27469524090,
+"cp26": 27911895801
+},
+{
+"code": "01",
+"label": "Enseignement pré-élémentaire",
+"ae25": 6647073474,
+"ae26": 6947911332,
+"cp25": 6647073474,
+"cp26": 6947911332
+},
+{
+"code": "02",
+"label": "Enseignement élémentaire",
+"ae25": 13510819366,
+"ae26": 14122375334,
+"cp25": 13510819366,
+"cp26": 14122375334
+},
+{
+"code": "03",
+"label": "Besoins éducatifs particuliers",
+"ae25": 2308562520,
+"ae26": 2347354309,
+"cp25": 2308562520,
+"cp26": 2347354309
+},
+{
+"code": "04",
+"label": "Formation des personnels enseignants",
+"ae25": 987969260,
+"ae26": 418262714,
+"cp25": 987969260,
+"cp26": 418262714
+},
+{
+"code": "05",
+"label": "Remplacement",
+"ae25": 2264187621,
+"ae26": 2301116111,
+"cp25": 2264187621,
+"cp26": 2301116111
+},
+{
+"code": "06",
+"label": "Pilotage et encadrement pédagogique",
+"ae25": 1623619071,
+"ae26": 1652635425,
+"cp25": 1623619071,
+"cp26": 1652635425
+},
+{
+"code": "07",
+"label": "Personnels en situations diverses",
+"ae25": 127292778,
+"ae26": 119790576,
+"cp25": 127292778,
+"cp26": 122240576
+},
+{
+"code": "141",
+"label": "Enseignement scolaire public du second degré",
+"ae25": 39453695772,
+"ae26": 40007854624,
+"cp25": 39453695772,
+"cp26": 40007854624
+},
+{
+"code": "01",
+"label": "Enseignement en collège",
+"ae25": 13888725825,
+"ae26": 14062845452,
+"cp25": 13888725825,
+"cp26": 14062845452
+},
+{
+"code": "02",
+"label": "Enseignement général et technologique en lycée",
+"ae25": 8670358956,
+"ae26": 9313182237,
+"cp25": 8670358956,
+"cp26": 9313182237
+},
+{
+"code": "03",
+"label": "Enseignement professionnel sous statut scolaire",
+"ae25": 5506858254,
+"ae26": 5551296301,
+"cp25": 5506858254,
+"cp26": 5551296301
+},
+{
+"code": "04",
+"label": "Apprentissage",
+"ae25": 8196040,
+"ae26": 8315198,
+"cp25": 8196040,
+"cp26": 8315198
+},
+{
+"code": "05",
+"label": "Enseignement post-baccalauréat en lycée",
+"ae25": 2523887896,
+"ae26": 2563000757,
+"cp25": 2523887896,
+"cp26": 2563000757
+},
+{
+"code": "06",
+"label": "Besoins éducatifs particuliers",
+"ae25": 1519722272,
+"ae26": 1544276540,
+"cp25": 1519722272,
+"cp26": 1544276540
+},
+{
+"code": "07",
+"label": "Aide à l'insertion professionnelle",
+"ae25": 64030235,
+"ae26": 65002377,
+"cp25": 64030235,
+"cp26": 65002377
+},
+{
+"code": "08",
+"label": "Information et orientation",
+"ae25": 384130144,
+"ae26": 390538199,
+"cp25": 384130144,
+"cp26": 390538199
+},
+{
+"code": "09",
+"label": "Formation continue des adultes et validation des acquis de l'expérience",
+"ae25": 148207767,
+"ae26": 150326680,
+"cp25": 148207767,
+"cp26": 150326680
+},
+{
+"code": "10",
+"label": "Formation des personnels enseignants et d'orientation",
+"ae25": 761041148,
+"ae26": 289900801,
+"cp25": 761041148,
+"cp26": 289900801
+},
+{
+"code": "11",
+"label": "Remplacement",
+"ae25": 1722581027,
+"ae26": 1751026131,
+"cp25": 1722581027,
+"cp26": 1751026131
+},
+{
+"code": "12",
+"label": "Pilotage, administration et encadrement pédagogique",
+"ae25": 4134267650,
+"ae26": 4204962770,
+"cp25": 4134267650,
+"cp26": 4204962770
+},
+{
+"code": "13",
+"label": "Personnels en situations diverses",
+"ae25": 121688558,
+"ae26": 113181181,
+"cp25": 121688558,
+"cp26": 113181181
+},
+{
+"code": "230",
+"label": "Vie de l'élève",
+"ae25": 8110318358,
+"ae26": 8074529556,
+"cp25": 8120318358,
+"cp26": 8078759956
+},
+{
+"code": "01",
+"label": "Vie scolaire et éducation à la responsabilité",
+"ae25": 2987999933,
+"ae26": 2865996566,
+"cp25": 2987999933,
+"cp26": 2865996566
+},
+{
+"code": "02",
+"label": "Santé scolaire",
+"ae25": 731949462,
+"ae26": 748193274,
+"cp25": 731949462,
+"cp26": 748193274
+},
+{
+"code": "03",
+"label": "Inclusion scolaire des élèves en situation de handicap",
+"ae25": 3008767211,
+"ae26": 3110815608,
+"cp25": 3008767211,
+"cp26": 3110815608
+},
+{
+"code": "04",
+"label": "Action sociale",
+"ae25": 1074391499,
+"ae26": 1110691638,
+"cp25": 1074391499,
+"cp26": 1110691638
+},
+{
+"code": "05",
+"label": "Politique de l'internat et établissements à la charge de l'Etat",
+"ae25": 76822969,
+"ae26": 79162313,
+"cp25": 86822969,
+"cp26": 83392713
+},
+{
+"code": "06",
+"label": "Actions éducatives complémentaires aux enseignements",
+"ae25": 186422514,
+"ae26": 159670157,
+"cp25": 186422514,
+"cp26": 159670157
+},
+{
+"code": "07",
+"label": "Scolarisation à 3 ans",
+"ae25": 43964770,
+"ae26": 0,
+"cp25": 43964770,
+"cp26": 0
+},
+{
+"code": "139",
+"label": "Enseignement privé du premier et du second degrés",
+"ae25": 8918238639,
+"ae26": 8874491322,
+"cp25": 8918238639,
+"cp26": 8874491322
+},
+{
+"code": "01",
+"label": "Enseignement pré-élémentaire",
+"ae25": 606607347,
+"ae26": 608122438,
+"cp25": 606607347,
+"cp26": 608122438
+},
+{
+"code": "02",
+"label": "Enseignement élémentaire",
+"ae25": 1612360685,
+"ae26": 1616053613,
+"cp25": 1612360685,
+"cp26": 1616053613
+},
+{
+"code": "03",
+"label": "Enseignement en collège",
+"ae25": 2266970269,
+"ae26": 2278544499,
+"cp25": 2266970269,
+"cp26": 2278544499
+},
+{
+"code": "04",
+"label": "Enseignement général et technologique en lycée",
+"ae25": 1510713755,
+"ae26": 1518613933,
+"cp25": 1510713755,
+"cp26": 1518613933
+},
+{
+"code": "05",
+"label": "Enseignement professionnel sous statut scolaire",
+"ae25": 977169376,
+"ae26": 983347536,
+"cp25": 977169376,
+"cp26": 983347536
+},
+{
+"code": "06",
+"label": "Enseignement post-baccalauréat en lycée",
+"ae25": 307420334,
+"ae26": 306086677,
+"cp25": 307420334,
+"cp26": 306086677
+},
+{
+"code": "07",
+"label": "Dispositifs spécifiques de scolarisation",
+"ae25": 198226645,
+"ae26": 197467611,
+"cp25": 198226645,
+"cp26": 197467611
+},
+{
+"code": "08",
+"label": "Actions sociales en faveur des élèves",
+"ae25": 84625725,
+"ae26": 84318870,
+"cp25": 84625725,
+"cp26": 84318870
+},
+{
+"code": "09",
+"label": "Fonctionnement des établissements",
+"ae25": 722128689,
+"ae26": 713659968,
+"cp25": 722128689,
+"cp26": 713659968
+},
+{
+"code": "10",
+"label": "Formation des personnels enseignants",
+"ae25": 160863033,
+"ae26": 99101317,
+"cp25": 160863033,
+"cp26": 99101317
+},
+{
+"code": "11",
+"label": "Remplacement",
+"ae25": 225620665,
+"ae26": 224711913,
+"cp25": 225620665,
+"cp26": 224711913
+},
+{
+"code": "12",
+"label": "Soutien",
+"ae25": 245532116,
+"ae26": 244462947,
+"cp25": 245532116,
+"cp26": 244462947
+},
+{
+"code": "214",
+"label": "Soutien de la politique de l'éducation nationale",
+"ae25": 2987215202,
+"ae26": 3023059802,
+"cp25": 2968037099,
+"cp26": 3056170353
+},
+{
+"code": "01",
+"label": "Pilotage et mise en oeuvre des politiques éducatives",
+"ae25": 520784656,
+"ae26": 534071793,
+"cp25": 520784656,
+"cp26": 534071793
+},
+{
+"code": "02",
+"label": "Évaluation et contrôle",
+"ae25": 97979359,
+"ae26": 101442116,
+"cp25": 97979352,
+"cp26": 101442109
+},
+{
+"code": "03",
+"label": "Communication",
+"ae25": 16293298,
+"ae26": 16801035,
+"cp25": 16293298,
+"cp26": 16801035
+},
+{
+"code": "04",
+"label": "Expertise juridique",
+"ae25": 19631484,
+"ae26": 21370972,
+"cp25": 19631484,
+"cp26": 21370972
+},
+{
+"code": "05",
+"label": "Action internationale",
+"ae25": 12905516,
+"ae26": 10237519,
+"cp25": 12905516,
+"cp26": 10237519
+},
+{
+"code": "06",
+"label": "Politique des ressources humaines",
+"ae25": 858976719,
+"ae26": 888963710,
+"cp25": 858154888,
+"cp26": 875903890
+},
+{
+"code": "07",
+"label": "Établissements d'appui de la politique éducative",
+"ae25": 142793122,
+"ae26": 141614707,
+"cp25": 142793122,
+"cp26": 141614707
+},
+{
+"code": "08",
+"label": "Logistique, système d'information, immobilier",
+"ae25": 844714485,
+"ae26": 826876609,
+"cp25": 826358220,
+"cp26": 872630905
+},
+{
+"code": "09",
+"label": "Certification",
+"ae25": 237361514,
+"ae26": 240069695,
+"cp25": 237361514,
+"cp26": 240485777
+},
+{
+"code": "10",
+"label": "Transports scolaires",
+"ae25": 3322845,
+"ae26": 3322845,
+"cp25": 3322845,
+"cp26": 3322845
+},
+{
+"code": "11",
+"label": "Pilotage et mise œuvre des politiques du sport, de la jeunesse, de l'éducation populaire et de la vie associative",
+"ae25": 232452204,
+"ae26": 238288801,
+"cp25": 232452204,
+"cp26": 238288801
+},
+{
+"code": "143",
+"label": "Enseignement technique agricole",
+"ae25": 1714737620,
+"ae26": 1733775175,
+"cp25": 1712186055,
+"cp26": 1714804367
+},
+{
+"code": "01",
+"label": "Enseignement public",
+"ae25": 860224417,
+"ae26": 933900551,
+"cp25": 860224417,
+"cp26": 920709718
+},
+{
+"code": "02",
+"label": "Enseignement privé",
+"ae25": 726393274,
+"ae26": 658514532,
+"cp25": 726393274,
+"cp26": 658514532
+},
+{
+"code": "03",
+"label": "Aide sociale aux élèves et santé scolaire",
+"ae25": 71035061,
+"ae26": 76399543,
+"cp25": 71125061,
+"cp26": 76489493
+},
+{
+"code": "04",
+"label": "Actions pédagogiques et éducatives",
+"ae25": 6112828,
+"ae26": 6112828,
+"cp25": 4312828,
+"cp26": 5312828
+},
+{
+"code": "05",
+"label": "Moyens communs à l'enseignement technique agricole",
+"ae25": 50972040,
+"ae26": 58847721,
+"cp25": 50130475,
+"cp26": 53777796
+}
+]

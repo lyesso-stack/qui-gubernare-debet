@@ -1,0 +1,50 @@
+{
+  "v": 3,
+  "layout": "files",
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-06T21:35:31Z"
+  },
+  "title": "Qui gubernare debet",
+  "namespace": "QGD",
+  "libraries": [],
+  "sections": {},
+  "groups": [
+    "Logos"
+  ],
+  "assetGroups": {
+    "Logos": {
+      "name": "Logos",
+      "tile": "l",
+      "order": [
+        "qgd-sceau.svg",
+        "qgd-sceau-blanc.svg"
+      ],
+      "files": {
+        "qgd-sceau.svg": {
+          "name": "qgd-sceau.svg",
+          "blob": "a6c1b07984adc34bb73144c1d362d392",
+          "size": 1010,
+          "type": "image/svg+xml"
+        },
+        "qgd-sceau-blanc.svg": {
+          "name": "qgd-sceau-blanc.svg",
+          "blob": "a3d554ff26d2994e55f356a12bed7445",
+          "size": 1010,
+          "type": "image/svg+xml"
+        }
+      }
+    }
+  },
+  "blobs": {},
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "lastChange": {
+    "by": "Qui gubernare debet",
+    "at": "2026-11-06T21:35:31Z",
+    "via": "Claude Code",
+    "note": "Première charte : couleurs, typos, 13 composants, sceau"
+  }
+}

@@ -1,0 +1,9 @@
+# Sources téléchargées et fichiers produits : on les refait avec les scripts
+dl_*/
+people.json
+photos.json
+cv.json
+sprite-*.json
+ph-*.jpg
+qgd.html
+__pycache__/

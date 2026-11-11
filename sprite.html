@@ -1,0 +1,26 @@
+<!doctype html><meta charset="utf-8"><pre id="out">attente</pre>
+<script>
+// Planche de photos : cases de 72 px, 24 colonnes, ordre = photos.json (groupe demandé). Les photos absentes laissent une case vide.
+(async function () {
+  var g = location.hash.slice(1), CELL = 72, COLS = 24;
+  var list = (await (await fetch('photos.json')).json()).filter(function (x) { return x[0] === g; });
+  var rows = Math.ceil(list.length / COLS), cv = document.createElement('canvas');
+  cv.width = COLS * CELL; cv.height = rows * CELL;
+  var ctx = cv.getContext('2d'); ctx.fillStyle = '#d9dde3'; ctx.fillRect(0, 0, cv.width, cv.height);
+  ctx.imageSmoothingQuality = 'high';
+  var ok = [];
+  await Promise.all(list.map(function (x, i) {
+    return new Promise(function (res) {
+      var im = new Image();
+      im.onload = function () {
+        var s = Math.min(im.naturalWidth, im.naturalHeight), sx = (im.naturalWidth - s) / 2;
+        ctx.drawImage(im, sx, 0, s, s, (i % COLS) * CELL, Math.floor(i / COLS) * CELL, CELL, CELL);
+        ok.push(x[1]); res();
+      };
+      im.onerror = function () { res(); };
+      im.src = 'dl_photos/' + g + '/' + x[1] + '.jpg';
+    });
+  }));
+  document.getElementById('out').textContent = JSON.stringify({ g: g, ok: ok, cols: COLS, cell: CELL, n: list.length, url: cv.toDataURL('image/jpeg', 0.74) });
+})();
+</script>

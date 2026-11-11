@@ -1,0 +1,1152 @@
+<title>Qui gubernare debet</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<style>
+/*@TOKENS@*/
+/*@BUNDLE_CSS@*/
+/* Page : mise en page des écrans, faite seulement avec les jetons de la charte. Thème clair par défaut, sombre sur demande (bouton du bandeau). */
+html { -webkit-text-size-adjust: 100%; }
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--navy); }
+.qg-in { padding-left: max(var(--space-6), env(safe-area-inset-left, 0px)); padding-right: max(var(--space-6), env(safe-area-inset-right, 0px)); }
+h1:focus { outline: none; }
+.qgd-main a:not([class]), .qg-facts a, .qgd-list a { color: var(--link); text-underline-offset: 3px; }
+.qg-bar-fill { display: block; }
+.qg-treemap { height: 520px; }
+.qg-tile:not([href]) { cursor: default; }.qg-tile:not([href]):hover { filter: none; }
+.qg-field select { height: 40px; padding: 0 var(--space-3); border: 1px solid var(--line-control); border-radius: var(--radius-xs); background: var(--paper); color: var(--ink); font: inherit; font-size: 15px; font-weight: 400; }
+.qg-field select:focus-visible { outline: 2px solid transparent; box-shadow: var(--focus-ring); }
+.qg-table tbody tr:not([data-href]) { cursor: default; }
+.qg-table tbody tr:not([data-href]):hover td { background: transparent; }
+.qgd-main { padding-top: var(--space-16); padding-bottom: var(--space-16); display: flex; flex-direction: column; gap: var(--space-16); }
+.qgd-sec { display: flex; flex-direction: column; gap: var(--space-6); min-width: 0; }
+.qgd-sec-head { display: flex; flex-direction: column; gap: var(--space-2); }
+.qgd-sec h2 { margin: 0; font-size: 22px; line-height: 30px; font-weight: 600; }
+.qgd-sec-head p:not(.qg-overline) { margin: 0; color: var(--ink-2); max-width: var(--measure); }
+.qgd-split { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: var(--space-4); }
+.qgd-row { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
+.qgd-cols { display: flex; flex-wrap: wrap; gap: var(--space-6); align-items: flex-start; }
+.qgd-col-main { flex: 3 1 560px; min-width: 0; display: flex; flex-direction: column; gap: var(--space-4); }
+.qgd-col-side { flex: 2 1 340px; min-width: 0; display: flex; flex-direction: column; gap: var(--space-4); }
+.qgd-panel { background: var(--paper); border: 1px solid var(--line); padding: var(--space-6) var(--space-6) 20px; overflow-x: auto; }
+.qgd-measure { max-width: var(--measure); }
+.qgd-muted { color: var(--ink-3); }
+.qgd-nowrap { white-space: nowrap; }
+.qgd-rowlink { color: var(--ink); font-weight: 500; text-decoration: none; }
+.qgd-rowlink:hover { text-decoration: underline; text-underline-offset: 3px; }
+.qgd-clamp { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.qgd-objcell { min-width: 260px; max-width: 460px; }
+.qgd-filters { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: flex-end; padding: var(--space-4) 20px; background: var(--paper); border: 1px solid var(--line); }
+.qgd-filters .qg-field { flex: 1 1 160px; min-width: 0; }
+.qg-field select, .qg-field input { width: 100%; min-width: 0; }
+.qgd-filters .qgd-grow { flex: 3 1 280px; }
+.qgd-count { margin: 0; font-size: 14px; line-height: 22px; color: var(--ink-2); }
+.qgd-count b { color: var(--ink); }
+.qgd-form { flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: var(--space-4); background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: var(--space-6); }
+.qgd-letter { flex: 2 1 560px; min-width: 0; overflow-wrap: anywhere; }
+.qgd-list { margin: 0; padding-left: 20px; max-width: var(--measure); display: grid; gap: var(--space-3); color: var(--ink-2); }
+.qgd-list b { color: var(--ink); }
+.qg-head-stats dd.qgd-dd-text { font-size: 22px; line-height: 30px; overflow-wrap: anywhere; }
+.qg-head h1.qgd-h1-long { font-size: 36px; line-height: 44px; max-width: 30ch; }
+.qgd-swipe { display: none; }
+.qgd-util-r { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); align-items: center; }
+.qgd-theme { background: none; border: 0; padding: 0; font: inherit; color: var(--on-navy); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.qgd-theme:focus-visible { outline: 2px solid var(--on-navy); outline-offset: 2px; }
+.qgd-foot { background: var(--paper); border-top: 1px solid var(--line); }
+.qgd-foot .qg-in { padding-top: var(--space-8); padding-bottom: var(--space-8); display: flex; flex-wrap: wrap; gap: var(--space-6) var(--space-12); justify-content: space-between; }
+.qgd-foot .qg-in > div { display: flex; flex-direction: column; gap: var(--space-1); max-width: 520px; }
+.qgd-progress { background: var(--paper); border-bottom: 1px solid var(--line); }
+.qgd-progress ol { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); margin: 0 auto; padding-top: var(--space-3); padding-bottom: var(--space-3); list-style: none; font-size: 14px; line-height: 24px; color: var(--ink-3); counter-reset: st; }
+.qgd-progress li { display: flex; align-items: center; gap: var(--space-2); counter-increment: st; }
+.qgd-progress li::before { content: counter(st); display: grid; place-items: center; width: 24px; height: 24px; box-sizing: border-box; border-radius: 50%; border: 1px solid var(--line-control); font-size: 12px; font-weight: 600; }
+.qgd-progress li[aria-current] { color: var(--ink); font-weight: 600; }
+.qgd-progress li[aria-current]::before { background: var(--blue); border-color: var(--blue); color: var(--on-blue); }
+.qgd-progress a { color: var(--link); text-underline-offset: 3px; }
+.qgd-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); margin: 0; padding: 0; list-style: none; }
+.qgd-n { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--blue); color: var(--on-blue); font-weight: 600; }
+.qgd-steps h3 { margin: 0; font-size: 17px; line-height: 24px; }
+.qgd-card-p, .qgd-steps p { margin: 0; font-size: 14px; line-height: 22px; color: var(--ink-2); }
+.qgd-find { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: flex-end; padding: 20px; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--blue); }
+.qgd-find .qg-field { flex: 1 1 320px; min-width: 0; font-size: 15px; color: var(--ink); }
+.qgd-cta { margin: var(--space-6) 0 0; }
+.qg-nav a:not(.qg-btn) { white-space: nowrap; }
+@media (max-width: 1240px) and (min-width: 721px) {
+  .qg-mast .qg-in { flex-wrap: wrap; row-gap: 0; padding-top: var(--space-3); }
+  .qg-nav { margin-left: 0; width: 100%; min-height: 48px; }
+  .qg-nav a:not(.qg-btn):first-child { padding-left: 0; }
+}
+/* Qui dirige : photos, listes de personnes, pyramide */
+.qgd-count:empty, .qgd-plist:empty { display: none; }
+.qgd-ph { display: inline-block; flex: none; border-radius: 50%; background-color: var(--paper-sunk); background-repeat: no-repeat; }
+.qgd-ph-ini { display: inline-grid; place-items: center; color: var(--ink-2); font-weight: 600; }
+.qgd-ph-lg { border-radius: var(--radius-sm); }
+.qgd-plist { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-1) var(--space-4); }
+.qgd-prow { display: flex; gap: var(--space-3); align-items: center; padding: var(--space-2); border-radius: var(--radius-sm); text-decoration: none; color: var(--ink); min-width: 0; }
+.qgd-prow:hover { background: var(--paper-sunk); }
+.qgd-prow:focus-visible, .qgd-tier-card:focus-visible, .qgd-mcard:focus-visible { outline: 2px solid transparent; box-shadow: var(--focus-ring); }
+.qgd-prow > span:last-child, .qgd-mcard > span:last-child, .qgd-tier-card > span:last-child { display: flex; flex-direction: column; min-width: 0; font-size: 13px; line-height: 18px; color: var(--ink-3); }
+.qgd-prow b { font-size: 15px; line-height: 22px; font-weight: 600; color: var(--ink); }
+.qgd-pyr { list-style: none; margin: 0; padding: 0; }
+.qgd-pyr > li { position: relative; display: flex; flex-direction: column; align-items: center; gap: var(--space-3); padding-top: var(--space-8); }
+.qgd-pyr > li:first-child { padding-top: 0; }
+.qgd-pyr > li + li::before { content: ""; position: absolute; top: 0; left: 50%; width: 2px; height: var(--space-6); margin-left: -1px; background: var(--line-control); }
+.qgd-pyr-lab { margin: 0; font-size: 13px; line-height: 18px; color: var(--ink-3); text-align: center; }
+.qgd-tier-card, .qgd-mcard { display: flex; gap: var(--space-4); align-items: center; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-sm); text-decoration: none; color: var(--ink); }
+.qgd-tier-card { width: min(460px, 100%); padding: var(--space-4) 20px; border-top: 3px solid var(--blue); }
+.qgd-tier-card b { font-size: 19px; line-height: 26px; color: var(--ink); }
+.qgd-tier-card > span:last-child { font-size: 14px; line-height: 20px; color: var(--ink-2); gap: 2px; }
+.qgd-mgrid { list-style: none; margin: 0; padding: 0; width: 100%; display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: var(--space-3); }
+.qgd-mcard { height: 100%; align-items: flex-start; gap: var(--space-3); padding: 14px var(--space-4); }
+.qgd-mcard > span:last-child { font-size: 14px; line-height: 20px; color: var(--ink-2); gap: 2px; }
+.qgd-mcard b { font-size: 15px; color: var(--ink); }
+.qgd-mcard small { font-size: 13px; line-height: 18px; color: var(--ink-3); }
+.qgd-tier-card:hover, .qgd-mcard:hover { border-color: var(--ink-3); }
+.qgd-pyr-note { max-width: var(--measure); text-align: center; }
+.qgd-who { display: flex; gap: var(--space-6); align-items: flex-start; flex-wrap: wrap; }
+.qgd-who > div { flex: 1 1 420px; min-width: 0; }
+.qgd-sal td:last-child { white-space: nowrap; }
+.qgd-sal tr.qgd-tot td { font-weight: 600; color: var(--ink); }
+.qgd-none { margin: 0; padding: var(--space-4) 20px; background: var(--paper); border: 1px solid var(--line); border-left: 3px solid var(--line-control); max-width: var(--measure); font-size: 15px; line-height: 24px; color: var(--ink-2); }
+@media (max-width: 720px) {
+  .qgd-tier-card b { font-size: 17px; line-height: 24px; }
+  .qgd-steps { grid-template-columns: 1fr; }
+  .qg-in { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .qg-util .qg-in { flex-direction: column; gap: var(--space-1); }
+  .qg-mast .qg-in { flex-wrap: wrap; min-height: 0; padding-top: var(--space-3); gap: var(--space-2) var(--space-3); }
+  .qg-nav { margin-left: 0; width: 100%; overflow-x: auto; }
+  .qg-nav a:not(.qg-btn) { padding: var(--space-2) var(--space-3); white-space: nowrap; }
+  .qg-nav a:not(.qg-btn):first-child { padding-left: 0; }
+  .qg-head { padding: var(--space-8) 0; }
+  .qg-head h1 { font-size: 32px; line-height: 40px; }
+  .qg-head h1.qgd-h1-long { font-size: 24px; line-height: 32px; }
+  .qg-head .qg-lead { font-size: 17px; line-height: 26px; }
+  .qg-head-stats { grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-top: var(--space-6); }
+  .qg-head-stats dd { font-size: 26px; line-height: 32px; }
+  .qg-head-stats dd.qgd-dd-text { font-size: 17px; line-height: 24px; }
+  .qg-mention .qg-in { grid-template-columns: 1fr; }
+  .qgd-main { padding-top: var(--space-8); padding-bottom: var(--space-12); gap: var(--space-12); }
+  .qg-treemap { height: 440px; }
+  .qg-bars li { grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-2) var(--space-3); }
+  .qg-bar-track { grid-column: 1 / -1; grid-row: 2; }
+  .qg-letter { padding: var(--space-6) 20px; }
+  .qg-letter-head { grid-template-columns: 1fr; gap: var(--space-3); }
+  .qg-letter-head .qg-to { text-align: left; }
+  .qg-facts { grid-template-columns: minmax(0, 1fr); }
+  .qg-facts dt { border-bottom: 0; padding-bottom: 0; }
+  .qgd-panel { padding: var(--space-4); }
+  .qgd-swipe { display: block; }
+  .qgd-rank { display: none; }
+}
+</style>
+
+<div class="qg-util"><div class="qg-in"><span><b>Site citoyen indépendant</b> · sans lien avec l'administration</span><span class="qgd-util-r"><span>Données : loi de finances 2026 · contrats au 4 novembre 2026 · dirigeants et élus au 11 novembre 2026</span><button class="qgd-theme" id="theme" type="button">Passer en thème sombre</button></span></div></div>
+<header class="qg-mast"><div class="qg-in">
+<svg class="qg-seal" viewBox="0 0 120 120" role="img" aria-label="Sceau Qui gubernare debet">
+<defs><path id="qgring" d="M60,60 m-49.5,0 a49.5,49.5 0 1,1 99,0 a49.5,49.5 0 1,1 -99,0"></path></defs>
+<circle cx="60" cy="60" r="58.25" style="fill: none; stroke: currentColor; stroke-width: 1.5"></circle>
+<circle cx="60" cy="60" r="45.5" style="fill: none; stroke: currentColor; stroke-width: 1"></circle>
+<text style="fill: currentColor; font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 8.6px; font-weight: 600"><textPath href="#qgring" textLength="306" lengthAdjust="spacing">QVI GVBERNARE DEBET · MMXXVI · REGISTRE CITOYEN ·</textPath></text>
+<path d="M60 32V83M35 43H85" style="fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round"></path>
+<path d="M35 43L27 64M35 43L43 64M85 43L77 64M85 43L93 64" style="fill: none; stroke: currentColor; stroke-width: 1.1; stroke-linecap: round"></path>
+<path d="M25 64H45A10 7.5 0 0 1 25 64Z M75 64H95A10 7.5 0 0 1 75 64Z M50 83H70V86H50Z M45 87H75V90.5H45Z" style="fill: currentColor"></path>
+<circle class="qg-seal-mark" cx="60" cy="29" r="3.4"></circle>
+</svg>
+<a class="qg-brand" href="#budget"><span class="qg-brand-name">Qui gubernare debet</span><span class="qg-brand-sub">Celui qui doit gouverner · observatoire citoyen de la dépense publique</span></a>
+<nav class="qg-nav" aria-label="Navigation principale">
+<a href="#budget" data-tab="budget">Budget de l'État</a>
+<a href="#pouvoir" data-tab="pouvoir">Qui dirige</a>
+<a href="#mission" data-tab="mission">Enseignement scolaire</a>
+<a href="#contrats" data-tab="contrats">Contrats</a>
+<a href="#methode" data-tab="methode">Méthode</a>
+<a class="qg-btn qg-btn-primary qg-btn-sm" id="ask" href="#contrats">Demander les pièces</a>
+</nav>
+</div></header>
+
+<div id="app"></div>
+
+<footer class="qgd-foot"><div class="qg-in">
+<div><span class="qg-brand-name">Qui gubernare debet</span><p class="qg-caption">Site citoyen indépendant, ni édité ni validé par l'État. Aucune donnée n'est inventée : chaque chiffre vient d'une publication officielle, sous Licence Ouverte.</p></div>
+<div><p class="qg-overline">Article 14 de la Déclaration de 1789</p><p class="qg-caption">« Tous les Citoyens ont le droit de constater, par eux-mêmes ou par leurs représentants, la nécessité de la contribution publique, de la consentir librement, d'en suivre l'emploi […] »</p></div>
+<div><p class="qg-overline">Sources</p><p class="qg-caption">Loi de finances et projets annuels de performances 2026<br>Données essentielles de la commande publique<br>Annuaire de l'administration, Assemblée nationale, Sénat, HATVP<br>Annuaire des entreprises ·<a class="qg-a" href="#methode">Méthode</a></p></div>
+</div></footer>
+
+<script>
+/*@BUNDLE_JS@*/
+</script>
+<script>
+window.__D = /*@DATA@*/null;
+</script>
+<script>
+(function () {
+  'use strict';
+  document.documentElement.lang = 'fr';
+  var D = window.__D, root = document.documentElement, app = document.getElementById('app');
+
+  // Thème : clair par défaut, sombre sur demande, retenu dans ce navigateur seulement
+  var themeBtn = document.getElementById('theme');
+  function setTheme(t) { root.setAttribute('data-theme', t); themeBtn.textContent = t === 'dark' ? 'Passer en thème clair' : 'Passer en thème sombre'; }
+  var saved = null; try { saved = localStorage.getItem('qgd-theme'); } catch (e) {}
+  setTheme(saved === 'dark' ? 'dark' : 'light');
+  themeBtn.addEventListener('click', function () {
+    var t = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    setTheme(t); try { localStorage.setItem('qgd-theme', t); } catch (e) {}
+  });
+
+  var nf0 = new Intl.NumberFormat('fr-FR', { maximumFractionDigits: 0 });
+  var nf1 = new Intl.NumberFormat('fr-FR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  var nf2 = new Intl.NumberFormat('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  function eur(v) {
+    if (v >= 1e9) return nf2.format(v / 1e9) + ' Md€';
+    if (v >= 1e6) return (v >= 1e8 ? nf0.format(v / 1e6) : nf1.format(v / 1e6)) + ' M€';
+    return nf0.format(v) + ' €';
+  }
+  function eurFull(v) { return nf0.format(v) + ' €'; }
+  function md(v) { return nf1.format(v) + ' Md€'; }
+  function varTxt(a, b) {
+    if (!a) return 'nouvelle';
+    if (!b) return 'supprimée';
+    var p = (b - a) / a * 100;
+    return (p > 0.05 ? '+' : p < -0.05 ? '−' : '') + nf1.format(Math.abs(p)) + ' %';
+  }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  var MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+  function dateFr(s) { if (!s) return '—'; var p = s.split('-'); return p[2] + '/' + p[1] + '/' + p[0]; }
+  function dateLong(s) { if (!s) return '—'; var p = s.split('-'); return (+p[2] === 1 ? '1er' : +p[2]) + ' ' + MOIS[+p[1] - 1] + ' ' + p[0]; }
+  function monthYear(s) { var p = s.split('-'); return MOIS[+p[1] - 1] + ' ' + p[0]; }
+  function share(v, t) { return nf1.format(v / t * 100) + ' %'; }
+  function initials(n) { return n.split(/[\s-]+/).map(function (w) { return w.charAt(0); }).join('').slice(0, 2).toUpperCase(); }
+
+  // Contrats : [id, acheteur, objet, montant, date, durée (mois), titulaire, nb co-titulaires, cpv, procédure, offres, lieu, date publication, forme du prix]
+  var C = D.c.map(function (r, i) { return { i: i, id: r[0], b: r[1], obj: r[2], m: r[3], d: r[4], dur: r[5], s: r[6], co: r[7], cpv: r[8], proc: r[9], off: r[10], lieu: r[11], pub: r[12], prix: r[13] }; });
+  var CPV = {"03":"Produits agricoles","09":"Énergie et carburants","14":"Produits miniers","15":"Alimentation et boissons","16":"Machines agricoles","18":"Vêtements et accessoires","19":"Cuir et textiles","22":"Imprimés et édition","24":"Produits chimiques","30":"Informatique et bureautique","31":"Matériel électrique","32":"Télécoms et audiovisuel","33":"Matériel médical","34":"Véhicules et transport","35":"Sécurité","37":"Musique, sport, jeux","38":"Laboratoire et optique","39":"Mobilier et fournitures","41":"Eau","42":"Machines industrielles","43":"Engins de chantier","44":"Matériaux de construction","45":"Travaux de construction","48":"Logiciels","50":"Réparation et maintenance","51":"Installation","55":"Hôtellerie et restauration","60":"Transport de personnes et de biens","63":"Voyages et services de transport","64":"Poste et télécommunications","65":"Eau, gaz, électricité","66":"Banque et assurance","70":"Immobilier","71":"Architecture et ingénierie","72":"Services informatiques","73":"Recherche et développement","75":"Administration publique","76":"Pétrole et gaz","77":"Espaces verts","79":"Conseil, communication, services aux entreprises","80":"Enseignement et formation","85":"Santé et action sociale","90":"Nettoyage, déchets, assainissement","92":"Culture et sport","98":"Autres services"};
+  function cpvLabel(code) { return CPV[String(code || '').slice(0, 2)] || 'Non classé'; }
+  function buyer(siret) { var b = D.buyers[siret]; return b ? b[0] : 'Acheteur ' + siret; }
+  function sup(siret) { var s = D.sup[String(siret).slice(0, 9)]; return s && s[0] ? s[0] : 'Entreprise ' + siret; }
+  function supCity(siret) { var s = D.sup[String(siret).slice(0, 9)]; return s ? s[1] : ''; }
+
+  var MTOT = D.missions.reduce(function (s, m) { return s + m[1]; }, 0);
+  var ES = D.missions[0];
+  var PTOT = D.progs.reduce(function (s, p) { return s + p.cp26; }, 0);
+  var P25 = D.progs.reduce(function (s, p) { return s + p.cp25; }, 0);
+  var GAP = PTOT / 1e9 - ES[1]; // projet du Gouvernement moins crédits votés, en Md€
+  var NACT = D.progs.reduce(function (s, p) { return s + p.actions.length; }, 0);
+  var NRESP = new Set(D.progs.map(function (p) { return D.dec.prog[p.code][0][0]; })).size;
+  function progHead(p) { return D.pp.pp.filter(function (x) { return x.id === D.dec.prog[p.code][0][0]; })[0]; }
+  var CTOT = C.reduce(function (s, c) { return s + c.m; }, 0);
+  var NBUY = Object.keys(D.buyers).length;
+  var SINGLE = C.filter(function (c) { return c.off === '1'; }).length;
+  var TOP10 = C.slice().sort(function (a, b) { return b.m - a.m; }).slice(0, 10).reduce(function (s, c) { return s + c.m; }, 0) / CTOT * 100;
+  var dates = C.map(function (c) { return c.d; }).sort();
+  var D0 = dates[0], D1 = dates[dates.length - 1];
+  var BIG = C.reduce(function (a, c) { return c.m > a.m ? c : a; });
+
+  /* ---------- Briques ---------- */
+  var MENTION = '<aside class="qg-mention" aria-label="Mention obligatoire"><div class="qg-in"><p class="qg-overline">Mention obligatoire</p>' +
+    '<div><blockquote>« La société a le droit de demander compte à tout agent public de son administration. »</blockquote><cite>Déclaration des droits de l\'homme et du citoyen de 1789, article 15. Texte à valeur constitutionnelle.</cite></div></div></aside>';
+
+  // o : { crumbs: [[texte, lien]], over, h1, long, lead, stats: [[titre, valeur, unité, source, texte?]] }
+  function head(o) {
+    return '<section class="qg-head"><div class="qg-in">' +
+      (o.crumbs ? '<ol class="qg-crumbs">' + o.crumbs.map(function (c) { return '<li>' + (c[1] ? '<a href="' + c[1] + '">' + esc(c[0]) + '</a>' : esc(c[0])) + '</li>'; }).join('') + '</ol>' : '') +
+      '<p class="qg-overline">' + o.over + '</p><h1 tabindex="-1"' + (o.long ? ' class="qgd-h1-long"' : '') + '>' + o.h1 + '</h1>' +
+      (o.lead ? '<p class="qg-lead">' + o.lead + '</p>' : '') + (o.cta ? '<p class="qgd-cta">' + o.cta + '</p>' : '') +
+      '<dl class="qg-head-stats">' + o.stats.map(function (s) {
+        return '<div><dt>' + s[0] + '</dt><dd' + (s[4] ? ' class="qgd-dd-text"' : '') + '>' + s[1] + (s[2] ? '<small>' + s[2] + '</small>' : '') + '</dd><p class="qg-src">' + s[3] + '</p></div>';
+      }).join('') + '</dl></div></section>' + (o.step ? progress(o.step) : '') + MENTION;
+  }
+  // Le parcours du site : 1 choisir une dépense, 2 voir qui en répond, 3 demander les pièces
+  function progress(n) {
+    var st = [['Choisir une dépense', '#contrats'], ['Voir qui en répond', ''], ['Demander devis et factures', '#demande']];
+    return '<nav class="qgd-progress" aria-label="Contrôler une dépense en 3 gestes"><ol class="qg-in">' + st.map(function (x, i) {
+      var lab = x[0];
+      if (i + 1 !== n && x[1] && (i === 0 || n === 2)) lab = '<a href="' + x[1] + '"' + (i === 2 ? ' data-scroll' : '') + '>' + lab + '</a>';
+      return '<li' + (i + 1 === n ? ' aria-current="step"' : '') + '>' + lab + '</li>';
+    }).join('') + '</ol></nav>';
+  }
+  // o : { over, title, intro, right, id }
+  function sec(o, body) {
+    var h = '<div class="qgd-sec-head">' + (o.over ? '<p class="qg-overline">' + o.over + '</p>' : '') + '<h2' + (o.id ? ' id="' + o.id + '-h"' : '') + '>' + o.title + '</h2>' + (o.intro ? '<p>' + o.intro + '</p>' : '') + '</div>';
+    if (o.right) h = '<div class="qgd-split">' + h + '<div class="qgd-row">' + o.right + '</div></div>';
+    return '<section class="qgd-sec"' + (o.id ? ' id="' + o.id + '" aria-labelledby="' + o.id + '-h"' : '') + '>' + h + body + '</section>';
+  }
+  // items : [{ label (html), sub (html), v, val }]
+  function bars(items) {
+    var max = Math.max.apply(null, items.map(function (x) { return x.v; }));
+    return '<ul class="qg-bars">' + items.map(function (x) {
+      return '<li><span class="qg-bar-label"><b>' + x.label + '</b>' + (x.sub ? '<span>' + x.sub + '</span>' : '') + '</span>' +
+        '<span class="qg-bar-track"><span class="qg-bar-fill" style="width:' + Math.max(0.5, x.v / max * 100).toFixed(2) + '%"></span></span><span class="qg-bar-value">' + x.val + '</span></li>';
+    }).join('') + '</ul>';
+  }
+  function main(html) { return '<main class="qg-in qgd-main">' + html + '</main>'; }
+
+  /* ---------- Chaîne de traçabilité : [maillon, détail, état ok|cut|no, étiquette, lien suivant cut|no] ---------- */
+  var BREAK = '<b>Rupture entre 4 et 5.</b> L\'État relie chaque contrat à une ligne du budget dans son logiciel comptable, Chorus, mais ne publie pas ce lien. Les devis et les factures ne sont pas publiés non plus. Tout citoyen peut les exiger : chaque fiche contrat prépare la demande.';
+  function steps(o) {
+    o = o || {};
+    return [
+      ["Budget de l'État", 'Loi de finances 2026', 'ok', 'Traçable'],
+      ['Mission', o.m || '31 missions', 'ok', 'Traçable'],
+      ['Programme', D.progs.length + ' programmes, ' + NRESP + ' responsables', 'ok', 'Traçable'],
+      ['Action', NACT + ' actions chiffrées', 'ok', 'Traçable', 'cut'],
+      ['Acheteur', 'Aucun lien public action → contrat', 'cut', 'Lien rompu'],
+      ['Contrat', nf0.format(C.length) + ' marchés publiés', 'ok', 'Traçable', 'no'],
+      ['Devis retenu', 'Sur demande', 'no', 'Non publié', 'no'],
+      ['Factures', 'Sur demande', 'no', 'Non publié']
+    ];
+  }
+  function chain(title, intro, list, legend, extra) {
+    var li = list.map(function (c) {
+      return '<li data-s="' + c[2] + '"' + (c[4] ? ' data-next="' + c[4] + '"' : '') + '><span class="qg-chain-label">' + c[0] + '</span><span class="qg-chain-detail">' + esc(c[1]) + '</span><span><span class="qg-status qg-status-' + c[2] + '">' + c[3] + '</span></span></li>';
+    }).join('');
+    return sec({ over: 'Traçabilité', title: title, intro: intro },
+      '<div class="qgd-panel"><ol class="qg-chain">' + li + '</ol></div><p class="qg-caption qgd-swipe">Faites glisser pour voir les 8 maillons.</p><p class="qg-caption qgd-measure">' + (legend || BREAK) + '</p>' + (extra || ''));
+  }
+
+  /* ---------- 1. Budget de l'État ---------- */
+  function viewBudget() {
+    var rest = D.missions.slice(10), restSum = rest.reduce(function (s, m) { return s + m[1]; }, 0);
+    function row(m, i) {
+      var es = i === 0;
+      return '<tr' + (es ? ' data-href="#mission"' : '') + '><td class="qg-num qgd-muted qgd-rank">' + (i + 1) + '</td><td>' +
+        (es ? '<a class="qgd-rowlink" href="#mission">' + esc(m[0]) + '</a>' : '<span class="qgd-rowlink">' + esc(m[0]) + '</span>') +
+        (m[2] ? '<small>' + esc(m[2]) + '</small>' : '') + misWho(m[0]) + '</td><td class="qg-r qg-amt">' + md(m[1]) + '</td><td class="qg-r">' + share(m[1], MTOT) + '</td></tr>';
+    }
+    return head({
+      crumbs: [["Budget de l'État 2026"]],
+      over: 'Loi de finances 2026 · budget général',
+      h1: 'Où vont ' + nf1.format(MTOT) + ' milliards d\'euros',
+      lead: 'Ce site sert à demander des comptes sur l\'argent public. Trouvez un contrat payé par l\'État, voyez qui en répond, et demandez le devis et les factures. C\'est un droit, et c\'est gratuit.',
+      cta: '<a class="qg-btn qg-btn-primary" href="#controle" data-scroll>Contrôler une dépense</a>',
+      stats: [
+        ['Crédits de paiement', nf1.format(MTOT), 'Md€', '31 missions'],
+        ['Premier poste', nf1.format(ES[1]), 'Md€', esc(ES[0]) + ', ' + nf0.format(ES[1] / MTOT * 100) + ' %'],
+        ['Contrats publiés', nf0.format(C.length), '', 'Éducation nationale, ' + nf1.format(CTOT / 1e9) + ' Md€'],
+        ['Factures en ligne', '0', '', 'À demander, pièce par pièce']
+      ]
+    }) + main(
+      sec({ id: 'controle', over: 'À quoi sert ce site', title: 'Contrôlez une dépense en 3 gestes', intro: 'Le suivi va aujourd\'hui jusqu\'aux ' + nf0.format(C.length) + ' contrats de l\'Éducation nationale. Les factures ne sont jamais publiées : le site prépare la demande à votre place.' },
+        '<ol class="qgd-steps">' + [['Choisir une dépense', 'Cherchez une entreprise, un objet ou un numéro de marché parmi les contrats signés.'], ['Voir qui en répond', 'Le service qui a signé, l\'entreprise payée, et les responsables du budget nommés par l\'État.'], ['Demander devis et factures', 'La lettre est déjà écrite. Ajoutez votre nom, puis copiez-la ou ouvrez votre messagerie. L\'administration a un mois pour répondre.']].map(function (x, i) {
+          return '<li class="qg-card"><span class="qgd-n" aria-hidden="true">' + (i + 1) + '</span><h3>' + x[0] + '</h3><p>' + x[1] + '</p></li>';
+        }).join('') + '</ol>' +
+        '<form class="qgd-find" id="find" role="search"><label class="qg-field">Commencez ici : une entreprise, un objet, un n° de marché<input id="find-q" type="search" placeholder="Ex. Capgemini, agence de voyages, informatique"></label><button class="qg-btn qg-btn-primary" type="submit">Chercher les contrats</button></form>' +
+        '<p class="qg-caption">Ou partez d\'un exemple : <a class="qg-a" href="#contrat-' + BIG.i + '">le plus gros contrat (' + esc(sup(BIG.s)) + ', ' + eur(BIG.m) + ')</a> · <a class="qg-a" href="#contrats" data-f="1">les ' + SINGLE + ' contrats qui n\'ont reçu qu\'une seule offre</a> · <a class="qg-a" href="#contrats" data-f="">tous les contrats</a></p>') +
+      sec({ over: 'Vue d\'ensemble', title: 'Les 31 missions du budget général', intro: 'Chaque surface est proportionnelle aux crédits de la mission. L\'Enseignement scolaire, suivi jusqu\'aux contrats, s\'ouvre d\'un clic.',
+        right: '<a class="qg-btn qg-btn-secondary qg-btn-sm" href="#tableau" data-scroll>Voir en tableau</a>' },
+        '<figure style="margin:0;display:flex;flex-direction:column;gap:12px"><div class="qg-treemap" id="tm"></div>' +
+        '<ul class="qg-legend"><li><i style="background:var(--viz-4)"></i>50 Md€ et plus</li><li><i style="background:var(--viz-3)"></i>20 à 50 Md€</li><li><i style="background:var(--viz-2)"></i>5 à 20 Md€</li><li><i style="background:var(--viz-1)"></i>moins de 5 Md€</li></ul>' +
+        '<figcaption class="qg-caption">Source : loi n° 2026-103 du 19 février 2026 de finances pour 2026, état B, crédits de paiement. Hors de ces 31 missions, l\'État rembourse aussi 145,6 Md€ d\'impôts et prélève 44,8 Md€ pour les collectivités et 28,4 Md€ pour l\'Union européenne.</figcaption></figure>') +
+      '<section class="qgd-cols" id="tableau">' +
+        '<div class="qgd-col-main qgd-sec"><h2>Les 10 premières missions</h2><div class="qg-table-wrap"><table class="qg-table">' +
+        '<thead><tr><th class="qgd-rank">Rang</th><th>Mission</th><th class="qg-r">Crédits 2026</th><th class="qg-r">Part</th></tr></thead>' +
+        '<tbody>' + D.missions.slice(0, 10).map(row).join('') + '</tbody>' +
+        '<tbody id="rest-rows" hidden>' + rest.map(function (m, i) { return row(m, i + 10); }).join('') + '</tbody>' +
+        '<tfoot><tr><td class="qgd-muted qgd-rank qgd-nowrap">11–31</td><td><span class="qgd-rowlink">' + rest.length + ' autres missions</span><small><button class="qg-btn qg-btn-quiet qg-btn-sm" id="rest-btn" type="button" aria-expanded="false" aria-controls="rest-rows" style="padding:0">Afficher les ' + rest.length + ' autres missions</button></small></td><td class="qg-r qg-amt">' + md(restSum) + '</td><td class="qg-r">' + share(restSum, MTOT) + '</td></tr></tfoot>' +
+        '</table></div></div>' +
+        '<aside class="qgd-col-side qgd-sec"><h2>Ce que les données montrent</h2>' +
+        '<div class="qg-stat"><p class="qg-overline">Concurrence</p><p class="qg-stat-value">' + SINGLE + '<small>contrats</small></p><p class="qg-stat-note">sur ' + nf0.format(C.length) + ' n\'ont reçu qu\'une seule offre.</p><p class="qg-caption">Éducation nationale · contrats au ' + D.meta.decp + '</p></div>' +
+        '<div class="qg-stat"><p class="qg-overline">Concentration</p><p class="qg-stat-value">' + nf1.format(TOP10) + '<small>%</small></p><p class="qg-stat-note">du montant total tient dans les 10 plus gros contrats.</p><p class="qg-caption">Montants déclarés, plafonds des accords-cadres compris</p></div>' +
+        '<div class="qg-stat"><p class="qg-overline">Transparence</p><p class="qg-stat-value">0<small>facture</small></p><p class="qg-stat-note">n\'est publiée. Chaque citoyen peut les demander.</p><a class="qg-btn qg-btn-primary" href="#contrats" style="justify-self:start">Demander les pièces</a></div>' +
+        '</aside></section>' +
+      chain('Jusqu\'où l\'euro est traçable aujourd\'hui', 'Huit maillons relient la loi de finances aux factures. Pour l\'Enseignement scolaire, quatre sont publics, un lien manque, et les deux derniers dorment dans les services.', steps(), null,
+        '<p style="margin:0"><a class="qg-a" href="#mission" style="font-weight:600">Suivre l\'Enseignement scolaire jusqu\'aux contrats →</a></p>')
+    );
+  }
+  function bindBudget() {
+    var btn = document.getElementById('rest-btn'), rows = document.getElementById('rest-rows');
+    btn.addEventListener('click', function () {
+      rows.hidden = !rows.hidden;
+      btn.setAttribute('aria-expanded', String(!rows.hidden));
+      btn.textContent = rows.hidden ? 'Afficher les ' + rows.rows.length + ' autres missions' : 'Masquer le détail';
+    });
+    document.getElementById('find').addEventListener('submit', function (e) {
+      e.preventDefault();
+      F = Object.assign({}, F0, { q: document.getElementById('find-q').value.trim() });
+      location.hash = '#contrats';
+    });
+    app.querySelectorAll('[data-f]').forEach(function (a) { a.addEventListener('click', function () { F = Object.assign({}, F0, { o: a.dataset.f }); }); });
+    drawTree();
+  }
+  var tmW = 0;
+  function drawTree() {
+    var el = document.getElementById('tm');
+    if (!el || el.clientWidth === tmW) return;
+    tmW = el.clientWidth;
+    QGD.treemap(el, D.missions.map(function (m) { return [m[0], m[1]]; }), ES[0], function (n) { return n === ES[0] ? '#mission' : ''; });
+    el.querySelectorAll('.qg-tile[href=""]').forEach(function (a) { a.removeAttribute('href'); }); // seule l'Enseignement scolaire a une page
+  }
+  window.addEventListener('resize', function () { requestAnimationFrame(drawTree); });
+
+  /* ---------- 2. Mission Enseignement scolaire ---------- */
+  function viewMission() {
+    var sorted = D.progs.slice().sort(function (a, b) { return b.cp26 - a.cp26; });
+    var d25 = (PTOT - P25) / 1e9;
+    return head({
+      crumbs: [["Budget de l'État 2026", '#budget'], [ES[0]]],
+      over: 'Mission · loi de finances 2026',
+      h1: esc(ES[0]),
+      lead: 'Les salaires des enseignants de la maternelle au lycée, public et privé sous contrat, et tout ce qui fait tourner l\'école : un euro sur cinq du budget de l\'État.',
+      stats: [
+        ['Crédits votés 2026', nf1.format(ES[1]), 'Md€', 'Le projet du Gouvernement prévoyait ' + nf0.format(Math.abs(GAP) * 1000) + ' M€ de ' + (GAP >= 0 ? 'plus' : 'moins')],
+        ['Programmes', String(D.progs.length), '', NRESP + ' responsables nommés'],
+        ['Actions', String(NACT), '', 'Chacune chiffrée au projet de loi'],
+        ['Contrats publiés', nf0.format(C.length), '', nf1.format(CTOT / 1e9) + ' Md€ notifiés, ' + NBUY + ' acheteurs']
+      ]
+    }) + main(
+      sec({ over: 'Qui décide', title: 'Les ministres responsables', intro: 'Ils répondent de cette mission devant le Parlement. Cliquez sur un nom pour voir son parcours.' }, decList(D.dec.mis[ES[0]])) +
+      sec({ over: 'Répartition', title: 'Les ' + D.progs.length + ' programmes, du plus gros au plus petit' },
+        bars(sorted.map(function (p) { return { label: '<a class="qgd-rowlink" href="#p' + p.code + '">' + esc(p.label) + '</a>', sub: 'Programme ' + p.code + ' · ' + esc(progHead(p).n), v: p.cp26, val: eur(p.cp26) }; })) +
+        '<p class="qg-caption qgd-measure">Projet de loi de finances 2026, crédits de paiement, cotisations de retraite des fonctionnaires comprises : ' + eur(PTOT) + ', soit ' + (d25 >= 0 ? '+' : '−') + nf1.format(Math.abs(d25)) + ' Md€ sur 2025. Le Parlement a voté ' + nf0.format(Math.abs(GAP) * 1000) + ' M€ de ' + (GAP >= 0 ? 'moins' : 'plus') + ' pour la mission ; la répartition votée par programme n\'est pas reprise ici.</p>') +
+      sec({ over: 'Responsables', title: 'Qui répond de quoi', intro: 'Chaque programme a un responsable désigné dans le projet annuel de performances. C\'est à cette personne que l\'on demande des comptes.' },
+        '<div class="qg-cards">' + sorted.map(function (p) {
+          return '<a class="qg-card" href="#p' + p.code + '"><p class="qg-overline">Programme ' + p.code + '</p><h3>' + esc(p.label) + '</h3>' +
+            '<p style="margin:0;font-size:14px;line-height:22px;color:var(--ink-2)">' + esc(p.desc) + '</p>' +
+            '<p class="qg-card-figure">' + nf1.format(p.cp26 / 1e9) + '<small>Md€ en 2026</small></p>' +
+            '<div class="qg-card-who"><span class="qg-avatar" aria-hidden="true">' + initials(progHead(p).n) + '</span><b>' + esc(progHead(p).n) + '</b><span>' + esc(D.dec.prog[p.code][0][1].replace('Responsable du programme · ', '')) + '</span></div>' +
+            '<span class="qg-card-more">Voir ses ' + p.actions.length + ' actions →</span></a>';
+        }).join('') + '</div>' +
+        '<p class="qg-caption qgd-measure">Postes désignés dans le projet annuel de performances 2026 de la mission (octobre 2025), avec leur titulaire au ' + REF + '. Le programme 143 relève du ministère de l\'Agriculture.</p>') +
+      chain('Où la chaîne s\'arrête pour cette mission', 'Le budget est publié jusqu\'à l\'action. Les contrats sont publiés aussi, mais rien ne dit sur quelle action chacun est payé.', steps({ m: ES[0] + ', ' + md(ES[1]) }))
+    );
+  }
+
+  /* ---------- 3. Programme ---------- */
+  function viewProg(code) {
+    var p = D.progs.filter(function (x) { return x.code === code; })[0];
+    if (!p) return null;
+    var acts = p.actions.slice().sort(function (a, b) { return b.cp26 - a.cp26; });
+    return head({
+      crumbs: [["Budget de l'État 2026", '#budget'], [ES[0], '#mission'], ['Programme ' + p.code]],
+      over: 'Programme ' + p.code + ' · projet de loi de finances 2026',
+      h1: esc(p.label),
+      lead: esc(p.desc) + '.',
+      stats: [
+        ['Crédits 2026', eur(p.cp26).split(' ')[0], eur(p.cp26).split(' ')[1], 'Projet de loi de finances'],
+        ['Sur un an', varTxt(p.cp25, p.cp26), '', '2025 : ' + eur(p.cp25)],
+        ['Actions', String(p.actions.length), '', 'Dernier niveau publié du budget'],
+        ['Part de la mission', nf1.format(p.cp26 / PTOT * 100), '%', esc(ES[0])]
+      ]
+    }) + main(
+      sec({ over: 'Responsable', title: 'Qui répond de ces crédits' },
+        decList(D.dec.prog[p.code]) +
+        '<p class="qg-caption" style="max-width:640px">Poste désigné dans le <a class="qg-a" href="https://www.assemblee-nationale.fr/dyn/contenu/visualisation/1087978/file/PAP2026_BG_Enseignement_scolaire_EC.pdf" target="_blank" rel="noopener">projet annuel de performances 2026</a>, page ' + p.page + '. Le responsable répond chaque année de l\'emploi de ces crédits dans le rapport annuel de performances.</p>') +
+      sec({ over: 'Programme ' + p.code + ' · ' + esc(p.resp[0]), title: 'Ses ' + p.actions.length + ' actions, de la plus grosse à la plus petite',
+        right: '<a class="qg-btn qg-btn-secondary qg-btn-sm" href="#contrats">Voir les contrats de l\'Éducation nationale</a>' },
+        bars(acts.map(function (a) { return { label: esc(a.label), sub: 'Action ' + a.code + ' · ' + varTxt(a.cp25, a.cp26) + ' sur 2025', v: a.cp26, val: eur(a.cp26) }; })) +
+        '<p class="qg-caption qgd-measure">Source : projet annuel de performances 2026, programme ' + p.code + ', page ' + p.page + '. Crédits de paiement. La somme des actions égale le total du programme à l\'euro près.</p>') +
+      sec({ over: 'Et ensuite', title: 'Qui dépense cet argent ?', intro: 'Ces crédits sont dépensés par l\'administration centrale du ministère et par les rectorats. Mais aucune donnée publique ne dit quel contrat est payé sur quel programme : c\'est la rupture de la chaîne. On peut suivre les contrats signés par chaque acheteur du ministère, puis exiger le reste.' },
+        '<p style="margin:0"><a class="qg-btn qg-btn-primary" href="#contrats">Voir les ' + nf0.format(C.length) + ' contrats du ministère</a></p>') +
+      chain('La chaîne pour ce programme', '', steps({ m: ES[0] }))
+    );
+  }
+
+  /* ---------- 4. Registre des contrats ---------- */
+  var F0 = { q: '', b: '', y: '', o: '', sort: 'm', page: 0 }, F = Object.assign({}, F0), PER = 40;
+  var SORTS = { m: 'triés par montant décroissant', d: 'triés du plus récent au plus ancien', a: 'triés par montant croissant' };
+  function filtered() {
+    var q = F.q.trim().toLowerCase();
+    var r = C.filter(function (c) {
+      if (F.b && c.b !== F.b) return false;
+      if (F.y && c.d.slice(0, 4) !== F.y) return false;
+      if (F.o && c.off !== F.o) return false;
+      if (q && (c.obj + ' ' + sup(c.s) + ' ' + c.s + ' ' + c.id + ' ' + buyer(c.b)).toLowerCase().indexOf(q) < 0) return false;
+      return true;
+    });
+    r.sort(F.sort === 'm' ? function (a, b) { return b.m - a.m; } : F.sort === 'd' ? function (a, b) { return a.d < b.d ? 1 : a.d > b.d ? -1 : 0; } : function (a, b) { return a.m - b.m; });
+    return r;
+  }
+  function offCell(off) { return off === '1' ? '<span class="qg-status qg-status-cut">1 seule</span>' : off ? esc(off) : '<span class="qgd-muted">Non déclaré</span>'; }
+  function contractRow(c) {
+    var city = supCity(c.s);
+    return '<tr data-href="#contrat-' + c.i + '"><td class="qg-num qgd-nowrap">' + dateFr(c.d) + '</td>' +
+      '<td class="qgd-objcell"><a class="qgd-rowlink qgd-clamp" href="#contrat-' + c.i + '">' + esc(c.obj) + '</a><small>' + esc(buyer(c.b)) + (buyHeads(c.b).length ? ' · ' + decInline(buyHeads(c.b)) : '') + '</small></td>' +
+      '<td>' + esc(sup(c.s)) + (c.co ? ' <span class="qgd-muted">+ ' + c.co + '</span>' : '') + (city ? '<small>' + esc(city) + '</small>' : '') + '<small class="qg-code">SIRET ' + c.s + '</small></td>' +
+      '<td>' + offCell(c.off) + '</td><td class="qg-r qg-amt">' + eur(c.m) + '</td></tr>';
+  }
+  function viewContrats() {
+    var years = Array.from(new Set(C.map(function (c) { return c.d.slice(0, 4); }))).sort().reverse();
+    var byBuyer = {}; C.forEach(function (c) { byBuyer[c.b] = (byBuyer[c.b] || 0) + 1; });
+    var buyersSorted = Object.keys(D.buyers).sort(function (a, b) { return (byBuyer[b] || 0) - (byBuyer[a] || 0); });
+    var bopts = Object.keys(D.buyers).sort(function (a, b) { return buyer(a).localeCompare(buyer(b), 'fr'); }).map(function (k) { return '<option value="' + k + '">' + esc(buyer(k)) + '</option>'; }).join('');
+    var bySup = {}; C.forEach(function (c) { var k = c.s.slice(0, 9); bySup[k] = bySup[k] || [0, 0]; bySup[k][0] += c.m; bySup[k][1]++; });
+    var supSorted = Object.keys(bySup).sort(function (a, b) { return bySup[b][0] - bySup[a][0]; });
+    var supRest = supSorted.slice(10).reduce(function (s, k) { return s + bySup[k][0]; }, 0);
+    var vers = byBuyer['17780430900199'] || 0, lyon = byBuyer['17690430800010'] || 0;
+    return head({
+      crumbs: [["Budget de l'État 2026", '#budget'], [ES[0], '#mission'], ['Contrats']],
+      over: 'Registre · données essentielles de la commande publique',
+      h1: 'Les contrats de l\'Éducation nationale',
+      lead: 'Étape 1 : trouvez la dépense à contrôler, puis cliquez sur sa ligne. Le registre contient les marchés de 40 000 € HT ou plus signés par l\'Éducation nationale de ' + monthYear(D0) + ' à ' + monthYear(D1) + '.',
+      step: 1,
+      stats: [
+        ['Contrats', nf0.format(C.length), '', NBUY + ' acheteurs publient'],
+        ['Montant déclaré', nf1.format(CTOT / 1e9), 'Md€', 'Plafonds des accords-cadres compris'],
+        ['Une seule offre', String(SINGLE), '', nf0.format(SINGLE / C.length * 100) + ' % des contrats'],
+        ['10 plus gros contrats', nf1.format(TOP10), '%', 'du montant total']
+      ]
+    }) + main(
+      '<section class="qgd-sec" id="registre" aria-label="Registre des contrats" style="gap:16px">' +
+        '<form class="qgd-filters" id="flt" role="search" aria-label="Filtrer les contrats">' +
+        '<label class="qg-field qgd-grow">Rechercher un objet, un fournisseur, un SIRET<input id="f-q" type="search" placeholder="Ex. agence de voyages, Capgemini, 38077512200035"></label>' +
+        '<label class="qg-field">Acheteur<select id="f-b"><option value="">Tous les acheteurs (' + NBUY + ')</option>' + bopts + '</select></label>' +
+        '<label class="qg-field">Année<select id="f-y"><option value="">Toutes</option>' + years.map(function (y) { return '<option>' + y + '</option>'; }).join('') + '</select></label>' +
+        '<label class="qg-field">Offres reçues<select id="f-o"><option value="">Toutes</option><option value="1">Une seule offre</option></select></label>' +
+        '<label class="qg-field">Trier par<select id="f-s"><option value="m">Montant décroissant</option><option value="d">Date récente</option><option value="a">Montant croissant</option></select></label>' +
+        '<button class="qg-btn qg-btn-secondary" id="f-reset" type="button">Réinitialiser</button></form>' +
+        '<p class="qgd-count" id="cnt" aria-live="polite"></p>' +
+        '<div class="qg-table-wrap"><table class="qg-table"><thead><tr><th>Notifié le</th><th>Objet et acheteur</th><th>Titulaire</th><th>Offres</th><th class="qg-r">Montant HT</th></tr></thead><tbody id="rows"></tbody></table></div>' +
+        '<nav class="qgd-split" style="align-items:center" aria-label="Pages du registre"><p class="qg-caption" id="pg"></p><div class="qgd-row"><button class="qg-btn qg-btn-secondary qg-btn-sm" id="prev" type="button">Précédent</button><button class="qg-btn qg-btn-secondary qg-btn-sm" id="next" type="button">Suivant</button></div></nav>' +
+        '<p class="qg-caption qgd-measure">Pour un accord-cadre, le montant déclaré est un plafond : la somme réellement payée peut être plus faible. Seules les factures le disent. Source : données essentielles de la commande publique, mises à jour le ' + D.meta.decp + '.</p>' +
+      '</section>' +
+      sec({ over: 'Titulaires', title: 'Qui reçoit le plus', intro: 'Montant déclaré cumulé par entreprise. Cliquez sur un nom pour voir ses contrats dans le registre.' },
+        bars(supSorted.slice(0, 10).map(function (k) { return { label: '<a class="qgd-rowlink" href="#registre" data-q="' + k + '">' + esc(D.sup[k] && D.sup[k][0] ? D.sup[k][0] : k) + '</a>', sub: bySup[k][1] + ' contrat' + (bySup[k][1] > 1 ? 's' : '') + (D.sup[k] && D.sup[k][1] ? ' · ' + esc(D.sup[k][1]) : ''), v: bySup[k][0], val: eur(bySup[k][0]) }; })
+          .concat([{ label: 'Tous les autres', sub: (supSorted.length - 10) + ' entreprises', v: supRest, val: eur(supRest) }]))) +
+      sec({ over: 'Acheteurs', title: 'Qui publie ses contrats', intro: 'Seuls ' + NBUY + ' services de l\'Éducation nationale apparaissent dans les données. Les académies de Versailles et de Lyon, parmi les plus grandes, n\'en déclarent que ' + vers + ' et ' + lyon + '.' },
+        bars(buyersSorted.map(function (k) { return { label: '<a class="qgd-rowlink" href="#registre" data-b="' + k + '">' + esc(buyer(k)) + '</a>', v: byBuyer[k] || 0, val: (byBuyer[k] || 0) + ' contrat' + ((byBuyer[k] || 0) > 1 ? 's' : '') }; })) +
+        '<p class="qg-caption">Nombre de contrats publiés par acheteur, données au ' + D.meta.decp + '.</p>')
+    );
+  }
+  function bindContrats() {
+    var q = document.getElementById('f-q'), b = document.getElementById('f-b'), y = document.getElementById('f-y'), o = document.getElementById('f-o'), s = document.getElementById('f-s');
+    var prev = document.getElementById('prev'), next = document.getElementById('next');
+    function sync() { q.value = F.q; b.value = F.b; y.value = F.y; o.value = F.o; s.value = F.sort; }
+    function draw() {
+      var list = filtered(), n = list.length, pages = Math.max(1, Math.ceil(n / PER));
+      if (F.page >= pages) F.page = pages - 1;
+      var from = F.page * PER, part = list.slice(from, from + PER), sum = list.reduce(function (t, c) { return t + c.m; }, 0);
+      document.getElementById('cnt').innerHTML = '<b>' + nf0.format(n) + ' contrat' + (n > 1 ? 's' : '') + '</b> · ' + eur(sum) + ' de montant déclaré · ' + SORTS[F.sort];
+      document.getElementById('rows').innerHTML = n ? part.map(contractRow).join('') : '<tr><td colspan="5">Aucun contrat ne correspond. Retirez un filtre ou changez la recherche.</td></tr>';
+      document.getElementById('pg').textContent = n ? 'Contrats ' + nf0.format(from + 1) + ' à ' + nf0.format(from + part.length) + ' sur ' + nf0.format(n) : 'Aucun contrat';
+      prev.disabled = F.page === 0; next.disabled = F.page >= pages - 1;
+    }
+    function top() { document.getElementById('registre').scrollIntoView(); }
+    sync();
+    document.getElementById('flt').addEventListener('submit', function (e) { e.preventDefault(); });
+    q.addEventListener('input', function () { F.q = q.value; F.page = 0; draw(); });
+    [[b, 'b'], [y, 'y'], [o, 'o'], [s, 'sort']].forEach(function (x) { x[0].addEventListener('change', function () { F[x[1]] = x[0].value; F.page = 0; draw(); }); });
+    document.getElementById('f-reset').addEventListener('click', function () { F = Object.assign({}, F0); sync(); draw(); });
+    prev.addEventListener('click', function () { F.page--; draw(); top(); });
+    next.addEventListener('click', function () { F.page++; draw(); top(); });
+    app.querySelectorAll('[data-q],[data-b]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        F = Object.assign({}, F0, a.dataset.q ? { q: a.dataset.q } : { b: a.dataset.b });
+        sync(); draw(); top();
+      });
+    });
+    draw();
+  }
+
+  /* ---------- 5. Fiche contrat et demande de pièces ---------- */
+  function letter(c, nom, mail) {
+    var who = nom || '[Votre nom et prénom]';
+    return {
+      who: who, mail: mail || '[Votre adresse électronique]',
+      to: ['À l\'attention du service des marchés publics', buyer(c.b)],
+      obj: 'Objet : demande de communication de documents administratifs, marché n° ' + c.id,
+      body: ['Madame, Monsieur,',
+        'En application des articles L. 300-1, L. 300-2 et L. 311-1 du code des relations entre le public et l\'administration, je vous demande de me communiquer, par courrier électronique, les documents suivants relatifs au marché n° ' + c.id + ', notifié le ' + dateLong(c.d) + ' à ' + sup(c.s) + ' (SIRET ' + c.s + '), pour un montant déclaré de ' + eurFull(c.m) + ' HT, ayant pour objet : « ' + c.obj + ' ».',
+        ['L\'acte d\'engagement signé et ses annexes financières : bordereau des prix unitaires, décomposition du prix ou devis retenu.',
+         'Les bons de commande émis au titre de ce marché.',
+         'Les factures reçues et le montant total payé à ce jour.',
+         'L\'imputation budgétaire de ces dépenses : programme et action du budget de l\'État.'],
+        'Une fois signés, les marchés publics et les documents qui s\'y rapportent sont communicables à toute personne qui en fait la demande. Les mentions couvertes par le secret des affaires peuvent être occultées, conformément aux articles L. 311-6 et L. 311-7 du même code.',
+        'Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.']
+    };
+  }
+  function letterText(L) {
+    return [L.who, L.mail, '', L.to[0], L.to[1], '', L.obj, '',
+      L.body.map(function (p) { return Array.isArray(p) ? p.map(function (x, i) { return (i + 1) + '. ' + x; }).join('\n') : p; }).join('\n\n'), '', L.who].join('\n');
+  }
+  function letterHtml(L) {
+    return '<div class="qg-letter-head"><div>' + esc(L.who) + '<br>' + esc(L.mail) + '</div><div class="qg-to">' + esc(L.to[0]) + '<br>' + esc(L.to[1]) + '</div></div>' +
+      '<p class="qg-letter-obj">' + esc(L.obj) + '</p>' +
+      L.body.map(function (p) { return Array.isArray(p) ? '<ol>' + p.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ol>' : '<p>' + esc(p) + '</p>'; }).join('') +
+      '<p style="margin:0">' + esc(L.who) + '</p>';
+  }
+  function shortTitle(t) {
+    if (t.length <= 90) return t;
+    var cut = t.slice(0, 88), sp = cut.lastIndexOf(' ');
+    return (sp > 40 ? cut.slice(0, sp) : cut).replace(/[\s,;:.\-–]+$/, '') + '…';
+  }
+  function viewContrat(i) {
+    var c = C[i];
+    var siren = c.s.slice(0, 9), name = sup(c.s), city = supCity(c.s), title = shortTitle(c.obj);
+    var amt = eur(c.m), k = amt.lastIndexOf(' ');
+    var same = C.filter(function (x) { return x.s.slice(0, 9) === siren; }).sort(function (a, b) { return a.d < b.d ? 1 : a.d > b.d ? -1 : 0; });
+    var sameSum = same.reduce(function (s, x) { return s + x.m; }, 0);
+    var facts = [
+      ['Acheteur', esc(buyer(c.b)) + '<br><span class="qg-code">SIRET ' + c.b + '</span>'],
+      ['Titulaire', '<a href="https://annuaire-entreprises.data.gouv.fr/etablissement/' + c.s + '" target="_blank" rel="noopener">' + esc(name) + '</a>' + (city ? ', ' + esc(city) : '') + '<br><span class="qg-code">SIRET ' + c.s + '</span>' + (c.co ? '<br>et ' + c.co + ' autre' + (c.co > 1 ? 's' : '') + ' titulaire' + (c.co > 1 ? 's' : '') + ' en groupement' : '')],
+      ['N° de marché', '<span class="qg-code">' + esc(c.id) + '</span>'],
+      ['Notifié le', dateLong(c.d)],
+      ['Durée', c.dur ? c.dur + ' mois' : '—'],
+      ['Procédure', esc(c.proc || '—')],
+      ['Offres reçues', c.off ? esc(c.off) : 'Non déclaré'],
+      ['Nature d\'achat', esc(cpvLabel(c.cpv)) + ' <span class="qg-code">CPV ' + esc(c.cpv || '—') + '</span>'],
+      ['Lieu d\'exécution', esc(c.lieu || '—')],
+      ['Forme du prix', esc(c.prix || '—')],
+      ['Montant déclaré', '<b class="qg-num">' + eurFull(c.m) + ' HT</b>'],
+      ['Source', '<a href="https://data.economie.gouv.fr/explore/dataset/decp-2022-marches-valides/table/?q=' + encodeURIComponent(c.id) + '" target="_blank" rel="noopener">Données essentielles de la commande publique</a>, publiées le ' + dateLong(c.pub)]
+    ].map(function (x) { return '<dt>' + x[0] + '</dt><dd>' + x[1] + '</dd>'; }).join('');
+    return head({
+      crumbs: [[ES[0], '#mission'], ['Contrats', '#contrats'], ['Marché n° ' + c.id]],
+      over: 'Contrat · notifié le ' + dateLong(c.d),
+      h1: esc(title), long: title.length > 48,
+      lead: title !== c.obj ? esc(c.obj) : esc(buyer(c.b)),
+      step: 2,
+      cta: '<a class="qg-btn qg-btn-primary" href="#demande" data-scroll>Demander le devis et les factures</a>',
+      stats: [
+        ['Montant déclaré', amt.slice(0, k), amt.slice(k + 1) + ' HT', 'Tel que déclaré par l\'acheteur'],
+        ['Titulaire', esc(name), '', esc(city || 'Ville non renseignée'), true],
+        ['Offres reçues', c.off ? esc(c.off) : '—', '', esc(c.proc || 'Procédure non déclarée')],
+        ['Durée', c.dur ? String(c.dur) : '—', c.dur ? 'mois' : '', 'Forme du prix : ' + esc((c.prix || 'non déclarée').toLowerCase())]
+      ]
+    }) + main(
+      sec({ over: 'Étape 2', title: 'Qui en répond', intro: 'Trois acteurs peuvent rendre compte de cette dépense. La demande part au premier.' },
+        '<div class="qg-cards">' +
+        '<div class="qg-card"><p class="qg-overline">Le service qui a signé</p><h3>' + esc(buyer(c.b)) + '</h3><p class="qgd-card-p">C\'est à lui qu\'on écrit. Il détient le devis retenu, les bons de commande et les factures.</p><p class="qg-caption">SIRET ' + c.b + '</p></div>' +
+        '<div class="qg-card"><p class="qg-overline">L\'entreprise payée</p><h3>' + esc(name) + '</h3><p class="qgd-card-p">' + (city ? esc(city) + '. ' : '') + (same.length > 1 ? same.length + ' contrats avec l\'Éducation nationale, ' + eur(sameSum) + ' HT au total.' : 'Un seul contrat avec l\'Éducation nationale dans ce registre.') + '</p><p class="qg-caption"><a class="qg-a" href="https://annuaire-entreprises.data.gouv.fr/etablissement/' + c.s + '" target="_blank" rel="noopener">Sa fiche officielle</a></p></div>' +
+        '<a class="qg-card" href="#mission"><p class="qg-overline">Les responsables du budget</p><h3>' + NRESP + ' responsables nommés pour la mission ' + esc(ES[0]) + '</h3><p class="qgd-card-p">Le programme qui paie ce contrat n\'est pas publié : la lettre le demande. Chaque responsable rend compte de ses crédits devant le Parlement, chaque année.</p><span class="qg-card-more">Voir qui ils sont →</span></a>' +
+        '</div>') +
+      sec({ over: 'Qui décide', title: 'Les personnes qui en répondent', intro: 'Qui dirige le service qui a signé, et le ministre dont il dépend. Cliquez sur un nom pour voir son parcours.' },
+        decList(D.dec.buy[c.b]) + (buyHeads(c.b).length ? '' : '<p class="qg-caption">La direction de ce service n\'est pas publiée dans l\'annuaire officiel de l\'administration.</p>')) +
+      '<section class="qgd-cols">' +
+        '<div class="qgd-col-main qgd-sec"><h2>La fiche publique</h2><dl class="qg-facts">' + facts + '</dl>' +
+        '<p class="qg-caption">Pour un accord-cadre, le montant déclaré est un plafond : ce qui a vraiment été payé ne figure que sur les factures.</p></div>' +
+        '<aside class="qgd-col-side qgd-sec"><h2>Du même titulaire</h2>' +
+        '<div class="qg-table-wrap"><table class="qg-table"><thead><tr><th>Notifié le</th><th>Offres</th><th class="qg-r">Montant HT</th></tr></thead><tbody>' +
+        same.map(function (x) {
+          var me = x.i === c.i;
+          return '<tr' + (me ? '' : ' data-href="#contrat-' + x.i + '"') + '><td>' + (me ? dateLong(x.d) + ' <span class="qgd-muted">· ce contrat</span>' : '<a class="qgd-rowlink" href="#contrat-' + x.i + '">' + dateLong(x.d) + '</a>') + '<small class="qg-code">' + esc(x.id) + '</small><small>' + esc(buyer(x.b)) + '</small></td><td>' + offCell(x.off) + '</td><td class="qg-r qg-amt">' + eurFull(x.m) + '</td></tr>';
+        }).join('') + '</tbody></table></div>' +
+        (same.length > 1
+          ? '<div class="qg-stat"><p class="qg-overline">Cumul pour ' + esc(name) + '</p><p class="qg-stat-value">' + eur(sameSum).replace(/ (\S+)$/, '<small>$1 HT</small>') + '</p><p class="qg-caption">' + same.length + ' contrats avec l\'Éducation nationale dans ce registre</p></div>'
+          : '<p class="qg-caption">Aucun autre contrat de ce titulaire dans le registre.</p>') +
+        '</aside></section>' +
+      chain('La chaîne de ce contrat', 'Ce que l\'on sait de ce contrat, maillon par maillon, et ce qu\'il faut demander.', [
+        ["Budget de l'État", 'Loi de finances 2026', 'ok', 'Traçable'],
+        ['Mission', ES[0], 'ok', 'Traçable', 'cut'],
+        ['Programme', 'Non indiqué pour ce contrat', 'cut', 'Non publié', 'cut'],
+        ['Action', 'Demandée au point 4 de la lettre', 'cut', 'Non publiée', 'cut'],
+        ['Acheteur', buyer(c.b), 'ok', 'Traçable'],
+        ['Contrat', 'N° ' + c.id, 'ok', 'Traçable', 'no'],
+        ['Devis retenu', 'À demander ci-dessous', 'no', 'Non publié', 'no'],
+        ['Factures', 'À demander ci-dessous', 'no', 'Non publié']
+      ], 'Le programme et l\'action qui paient ce contrat ne sont pas publiés. L\'État les connaît : il enregistre chaque paiement dans son logiciel comptable, Chorus. La lettre ci-dessous les demande, avec le devis et les factures.') +
+      sec({ id: 'demande', over: 'Étape 3 · Demande de pièces', title: 'Demander le devis et les factures de ce contrat', intro: 'La lettre est prête. Ajoutez votre nom et votre adresse, copiez-la et envoyez-la au service des marchés de l\'acheteur : ' + esc(buyer(c.b)) + '. Son adresse figure sur l\'avis de marché ou sur le site de l\'académie.' },
+        letterForm(''))
+    );
+  }
+  // Formulaire et lettre de demande (extra : ligne ajoutée sous les boutons, ex. formulaire de contact du service)
+  function letterForm(extra) {
+    return '<div class="qgd-cols" style="gap:32px">' +
+      '<div class="qgd-form"><p class="qg-overline">1 · Vos coordonnées</p>' +
+      '<label class="qg-field">Votre nom et prénom<input id="l-nom" type="text" autocomplete="name" placeholder="Prénom Nom"></label>' +
+      '<label class="qg-field">Votre adresse électronique<input id="l-mail" type="email" autocomplete="email" placeholder="vous@exemple.fr"></label>' +
+      '<p class="qg-overline" style="margin-top:8px">2 · Envoyer</p>' +
+      '<button class="qg-btn qg-btn-primary" id="copy" type="button">Copier la lettre</button>' +
+      '<a class="qg-btn qg-btn-secondary" id="mailto" href="#" target="_blank" rel="noopener">Ouvrir dans ma messagerie</a>' +
+      '<p class="qg-caption" id="toast" role="status"></p>' + extra +
+      '<p class="qg-caption">L\'administration a un mois pour répondre ; sans réponse, sa décision vaut refus. Vous avez alors deux mois pour saisir la Commission d\'accès aux documents administratifs (CADA), gratuitement, sur <a class="qg-a" href="https://www.cada.fr" target="_blank" rel="noopener">cada.fr</a>.</p>' +
+      '<p class="qg-caption">Votre nom et votre adresse restent sur cette page : rien n\'est envoyé ni enregistré.</p></div>' +
+      '<article class="qg-letter qgd-letter" id="letter" aria-label="Lettre de demande"></article></div>';
+  }
+  function bindContrat(i) { bindLetter(function (n, m) { return letter(C[i], n, m); }, ''); }
+  // Lettre prête à envoyer : se redessine à chaque frappe, se copie ou s'ouvre dans la messagerie (to : destinataire connu ou vide)
+  function bindLetter(make, to) {
+    var n = document.getElementById('l-nom'), m = document.getElementById('l-mail'), art = document.getElementById('letter'), mt = document.getElementById('mailto'), t = document.getElementById('toast');
+    var text = '';
+    function draw() {
+      var L = make(n.value.trim(), m.value.trim());
+      text = letterText(L);
+      art.innerHTML = letterHtml(L);
+      mt.href = 'mailto:' + encodeURI(to || '') + '?subject=' + encodeURIComponent(L.obj.replace('Objet : ', '')) + '&body=' + encodeURIComponent(text);
+      t.textContent = '';
+    }
+    n.addEventListener('input', draw); m.addEventListener('input', draw); draw();
+    document.getElementById('copy').addEventListener('click', function () {
+      var ok = function () { t.textContent = 'Lettre copiée. Collez-la dans votre messagerie.'; };
+      var fail = function () { var r = document.createRange(); r.selectNodeContents(art); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); t.textContent = 'Lettre sélectionnée : copiez-la avec Ctrl+C.'; };
+      try { navigator.clipboard.writeText(text).then(ok, fail); } catch (e) { fail(); }
+    });
+  }
+
+  /* ---------- 6. Méthode ---------- */
+  function viewMethode() {
+    return head({
+      crumbs: [["Budget de l'État 2026", '#budget'], ['Méthode et sources']],
+      over: 'Méthode',
+      h1: 'Méthode et sources',
+      lead: 'Chaque chiffre de ce registre vient d\'une publication officielle. Rien n\'est estimé.',
+      stats: [
+        ['Sources officielles', '8', '', 'Toutes publiques et gratuites'],
+        ['Missions', '31', '', 'Loi de finances 2026'],
+        ['Contrats', nf0.format(C.length), '', 'Au ' + D.meta.decp],
+        ['Montants inventés', '0', '', 'Chaque chiffre a sa source']
+      ]
+    }) + main(
+      sec({ over: 'Sources', title: 'D\'où viennent les chiffres' },
+        '<ul class="qgd-list">' +
+        '<li><b>Budget des 31 missions</b> : loi n° 2026-103 du 19 février 2026 de finances pour 2026, état B, crédits de paiement.</li>' +
+        '<li><b>Programmes, actions et responsables</b> : <a href="https://www.assemblee-nationale.fr/dyn/contenu/visualisation/1087978/file/PAP2026_BG_Enseignement_scolaire_EC.pdf" target="_blank" rel="noopener">projet annuel de performances 2026 de la mission Enseignement scolaire</a>, annexé au projet de loi de finances (octobre 2025). Les totaux des actions ont été vérifiés : ils égalent ceux de chaque programme à l\'euro près.</li>' +
+        '<li><b>Contrats</b> : <a href="https://data.economie.gouv.fr/explore/dataset/decp-2022-marches-valides/" target="_blank" rel="noopener">données essentielles de la commande publique</a>, ministère de l\'Économie, mises à jour le ' + D.meta.decp + '. Périmètre : l\'administration centrale de l\'Éducation nationale (SIREN 110 043 015) et les services académiques ayant publié des contrats.</li>' +
+        '<li><b>Noms des fournisseurs et des acheteurs</b> : <a href="https://annuaire-entreprises.data.gouv.fr" target="_blank" rel="noopener">répertoire Sirene</a>, via l\'API Recherche d\'entreprises de l\'État.</li>' +
+        '<li><b>Gouvernement, hauts fonctionnaires, autorités et institutions</b> : <a href="' + ANNUAIRE + '" target="_blank" rel="noopener">référentiel de l\'organisation administrative de l\'État</a>, publié par la DILA le ' + REF + ', avec le lien vers le texte de nomination au Journal officiel quand il est fourni.</li>' +
+        '<li><b>Qui décide</b> : pour chaque mission, le ministre rattaché selon les décrets d\'attributions du Gouvernement (notre lecture) ; pour chaque programme, le poste désigné dans le projet annuel de performances 2026 et son titulaire actuel ; pour chaque acheteur, le recteur ou le directeur publié par l\'annuaire officiel.</li>' +
+        '<li><b>Parcours</b> : actes publiés au Journal officiel, retrouvés par le nom grâce à <a href="https://jorfsearch.steinertriples.ch" target="_blank" rel="noopener">JORFSearch</a> ; études et postes tirés de <a href="https://www.wikidata.org" target="_blank" rel="noopener">Wikidata</a>, seulement quand la fiche correspond sans doute possible.</li>' +
+        '<li><b>Préfets</b> : <a href="' + LOCAL + '" target="_blank" rel="noopener">annuaire des services locaux de l\'État</a> (service-public.fr, DILA), API officielle, au ' + REF + '.</li>' +
+        '<li><b>Députés et sénateurs</b> : données ouvertes de l\'Assemblée nationale et du Sénat au ' + REF + ', photos officielles comprises.</li>' +
+        '<li><b>Déclarations</b> : liste des déclarations publiées par la Haute Autorité pour la transparence de la vie publique, reliée à chaque personne par son nom.</li>' +
+        '<li><b>Salaires</b> : <a href="' + AN_FICHE + '" target="_blank" rel="noopener">fiche n° 7 de l\'Assemblée nationale</a> (janvier 2026) pour les parlementaires ; pour le Gouvernement, calcul fixé par la loi de finances rectificative pour 2002 et le décret n° 2012-983, vérifié contre les montants publiés.</li></ul>') +
+      sec({ over: 'Limites', title: 'Ce que ce registre ne dit pas encore' },
+        '<ul class="qgd-list">' +
+        '<li>Les montants par programme sont ceux du projet de loi. Le Parlement a voté ' + nf0.format(Math.abs(GAP) * 1000) + ' M€ de ' + (GAP >= 0 ? 'moins' : 'plus') + ' pour la mission, sans que la répartition votée par programme soit reprise ici.</li>' +
+        '<li>Seuls les contrats de 40 000 € HT ou plus doivent être déclarés. Les achats plus petits, les subventions et les salaires n\'apparaissent pas.</li>' +
+        '<li>Certains acheteurs déclarent mal ou en retard. Seuls ' + NBUY + ' acheteurs du ministère ont publié des contrats dans ce fichier : les autres services académiques n\'y figurent pas.</li>' +
+        '<li>Le montant d\'un accord-cadre est un plafond, pas une dépense réelle.</li>' +
+        '<li>Le lien entre un contrat et une ligne du budget, les devis et les factures ne sont pas publiés. Ils s\'obtiennent sur demande.</li>' +
+        '<li>La lettre de demande n\'a pas été relue par un avocat.</li></ul>')
+    );
+  }
+
+  /* ---------- 7. Qui dirige : annuaire du pouvoir ---------- */
+  var PP = D.pp.pp, PBY = {}, KIDS = {};
+  PP.forEach(function (p) { PBY[p.id] = p; if (p.par) (KIDS[p.par] = KIDS[p.par] || []).push(p); });
+  function only(f) { return PP.filter(f); }
+  var PRES = only(function (p) { return p.g === 'pr'; })[0];
+  var PMIN = only(function (p) { return p.rank === 0; })[0];
+  var MINS = only(function (p) { return p.rank === 1; });
+  var NGOV = only(function (p) { return p.g === 'gouv'; }).length;
+  var NADM = only(function (p) { return p.g === 'adm'; }).length;
+  var CHECK = only(function (p) { return p.g === 'aai' || p.g === 'inst'; });
+  var PREF = only(function (p) { return p.g === 'pref' || p.vt === 'pref'; });
+  var NPREF = PREF.filter(function (p) { return p.g === 'pref'; }).length;
+  var LOCAL = 'https://api-lannuaire.service-public.fr/explore/dataset/api-lannuaire-administration/';
+  var REF = D.pp.ref.slice(6) + '/' + D.pp.ref.slice(4, 6) + '/' + D.pp.ref.slice(0, 4);
+  var CH = { an: { name: 'Assemblée nationale', who: 'députés', seats: 577, list: only(function (p) { return p.g === 'an'; }) },
+    sen: { name: 'Sénat', who: 'sénateurs', seats: 348, list: only(function (p) { return p.g === 'sen'; }) } };
+  var AN_FICHE = 'https://www.assemblee-nationale.fr/dyn/contenu/telechargement/631144/file/Fiche%207%20-%20Situation%20mat%C3%A9rielle%20du%20d%C3%A9put%C3%A9.pdf';
+  var SEN_MOYENS = 'https://www.senat.fr/connaitre-le-senat/role-et-fonctionnement/les-moyens-mis-a-la-disposition-des-senateurs.html';
+  var ANNUAIRE = 'https://www.data.gouv.fr/fr/datasets/referentiel-de-lorganisation-administrative-de-letat/';
+  function fold(s) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
+  PP.forEach(function (p) { p.k = fold([p.n, p.f, p.f2, p.o, p.grp && p.grp.join(' '), p.dep].join(' ')); });
+  function eur2(v) { return nf2.format(v) + ' €'; }
+  function civName(p) { return (p.civ === 'Mme' ? 'Mme ' : 'M. ') + p.n; }
+  function lcFirst(s) { return s.charAt(0).toLowerCase() + s.slice(1); }
+  // Le ministère (ou la Présidence) dont relève une personne
+  function chief(p) { var x = p, n = 0; while (x && x.g !== 'pr' && x.rank !== 0 && x.rank !== 1 && n++ < 6) x = PBY[x.par]; return x; }
+
+  // Photo officielle tirée d'une planche (24 colonnes de 72 px), sinon initiales
+  function photo(p, s) {
+    var lg = s > 48 ? ' qgd-ph-lg' : '';
+    if (p.ph != null) {
+      return '<span class="qgd-ph' + lg + '" role="img" aria-label="Photo officielle de ' + esc(p.n) + '" style="width:' + s + 'px;height:' + s + 'px;background-image:url(ph-' + p.g + '.jpg);background-size:' + (24 * s) + 'px auto;background-position:-' + (p.ph % 24 * s) + 'px -' + (Math.floor(p.ph / 24) * s) + 'px"></span>';
+    }
+    return '<span class="qgd-ph qgd-ph-ini' + lg + '" aria-hidden="true" style="width:' + s + 'px;height:' + s + 'px;font-size:' + Math.round(s * 0.34) + 'px">' + (p.g === 'vac' ? '—' : initials(p.n)) + '</span>';
+  }
+  function pRow(p, sub) {
+    return '<li><a class="qgd-prow" href="#pers-' + p.id + '">' + photo(p, 44) + '<span><b>' + esc(p.n) + '</b><span>' + esc(sub == null ? p.f : sub) + '</span></span></a></li>';
+  }
+  function pList(list, sub) { return '<ul class="qgd-plist">' + list.map(function (p) { return pRow(p, sub ? sub(p) : null); }).join('') + '</ul>'; }
+  // Qui décide : lignes [id, rôle, (titulaire nommé au projet annuel, s'il a changé)]
+  function decList(rows) {
+    return '<ul class="qgd-plist">' + rows.map(function (r) { return PBY[r[0]] ? pRow(PBY[r[0]], r[1]) : ''; }).join('') + '</ul>' +
+      rows.filter(function (r) { return r[2]; }).map(function (r) {
+        var w = r[2], who = w[0] && PBY[w[0]] ? '<a class="qg-a" href="#pers-' + w[0] + '">' + esc(w[1]) + '</a>' : esc(w[1]);
+        return '<p class="qg-caption">Le projet annuel de performances (octobre 2025) nommait ' + who + ' : le poste a changé de titulaire depuis.</p>';
+      }).join('');
+  }
+  function decInline(rows) {
+    return rows.map(function (r) { var p = PBY[r[0]]; return p ? '<a class="qg-a" href="#pers-' + p.id + '">' + esc(p.n) + '</a>' : ''; }).filter(Boolean).join(', ');
+  }
+  function buyHeads(siret) { return (D.dec.buy[siret] || []).filter(function (r) { return r[1] !== 'Ministre responsable'; }); }
+  function misWho(name) {
+    var r = D.dec.mis[name] || [];
+    return '<small>' + (r.length ? (r.length > 1 ? 'Ministres : ' : 'Ministre : ') + decInline(r) : 'Sans ministre : ' + (name === 'Pouvoirs publics' ? 'chaque institution fixe son propre budget' : 'juridictions indépendantes')) + '</small>';
+  }
+  // Ce que la personne décide : missions, programmes, acheteurs
+  var DECOF = {};
+  function decOf(id, what, href, role) { (DECOF[id] = DECOF[id] || []).push([what, href, role]); }
+  Object.keys(D.dec.mis).forEach(function (k) { D.dec.mis[k].forEach(function (r) { decOf(r[0], 'Mission « ' + k + ' »', k === ES[0] ? '#mission' : '#tableau', r[1]); }); });
+  D.progs.forEach(function (p) { D.dec.prog[p.code].forEach(function (r) { decOf(r[0], 'Programme ' + p.code + ' : ' + p.label, '#p' + p.code, r[1].split(' · ')[0]); }); });
+  Object.keys(D.dec.buy).forEach(function (s) {
+    var n = C.filter(function (c) { return c.b === s; }).length;
+    buyHeads(s).forEach(function (r) { decOf(r[0], buyer(s) + ' : ' + n + ' contrat' + (n > 1 ? 's' : '') + ' signé' + (n > 1 ? 's' : ''), '#contrats', 'Dirige le service acheteur'); });
+  });
+  function cap(t) { return t.charAt(0).toUpperCase() + t.slice(1); }
+  function cvSec(p) {
+    var c = D.cv[p.id], h = '', w = c && c.w;
+    if (!c) return sec({ over: 'Parcours', title: 'Son parcours' }, '<p class="qgd-none">Aucun acte retrouvé sous ce nom au Journal officiel, et pas de fiche Wikidata sûre.</p>');
+    if (w) {
+      var f = [w[1] ? [(p.civ === 'Mme' ? 'Née' : 'Né') + ' en', w[1]] : null, w[2] ? ['En bref', esc(cap(w[2]))] : null, w[3].length ? ['Études', esc(w[3].join(' ; '))] : null].filter(Boolean);
+      if (f.length) h += '<dl class="qg-facts" style="max-width:720px">' + f.map(function (x) { return '<dt>' + x[0] + '</dt><dd>' + x[1] + '</dd>'; }).join('') + '</dl>';
+      if (w[4].length) h += '<h3 style="margin:8px 0 0">Postes occupés</h3><ul class="qgd-list">' + w[4].map(function (r) {
+        return '<li>' + esc(cap(r[0])) + (r[1] ? ' <span class="qgd-muted">· ' + (r[2] ? r[1] + '–' + r[2] : 'depuis ' + r[1]) + '</span>' : '') + '</li>';
+      }).join('') + '</ul>';
+      h += '<p class="qg-caption">Source : <a class="qg-a" href="https://www.wikidata.org/wiki/' + w[0] + '" target="_blank" rel="noopener">sa fiche Wikidata</a>, encyclopédie libre et collaborative. Les actes officiels ci-dessous font foi.</p>';
+    }
+    if (c.j) {
+      h += '<h3 style="margin:8px 0 0">Au Journal officiel : ' + c.n + ' acte' + (c.n > 1 ? 's' : '') + '</h3><div class="qg-table-wrap"><table class="qg-table"><thead><tr><th>Publié le</th><th>Acte</th><th>Détail</th></tr></thead><tbody>' +
+        c.j.map(function (r) {
+          return '<tr><td class="qg-num qgd-nowrap">' + dateFr(r[0]) + '</td><td>' + esc(r[1]) + '</td><td>' + (r[3] ? '<a class="qg-a" href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT' + r[3] + '" target="_blank" rel="noopener">' + esc(r[2]) + '</a>' : esc(r[2])) + '</td></tr>';
+        }).join('') + '</tbody></table></div>' +
+        '<p class="qg-caption">' + (c.n > c.j.length ? 'Les ' + c.j.length + ' plus récents. ' : '') + 'Actes retrouvés par le nom grâce à <a class="qg-a" href="https://jorfsearch.steinertriples.ch/name/' + encodeURIComponent(p.n) + '" target="_blank" rel="noopener">JORFSearch</a> : un homonyme peut s\'y glisser. Chaque ligne ouvre le texte officiel sur Légifrance.</p>';
+    }
+    return sec({ id: 'parcours', over: 'Parcours', title: 'Son parcours' }, h);
+  }
+  function seatsOf(list) {
+    var by = {};
+    list.forEach(function (p) { var k = p.grp[0]; by[k] = by[k] || { k: k, name: p.grp[1], n: 0 }; by[k].n++; });
+    return Object.keys(by).map(function (k) { return by[k]; }).sort(function (a, b) { return b.n - a.n; });
+  }
+
+  function viewPouvoir() {
+    function tier(p, over, href) {
+      return '<a class="qgd-tier-card" href="' + href + '">' + photo(p, 56) + '<span><span class="qg-overline">' + over + '</span><b>' + esc(p.n) + '</b><span>' + esc(p.f) + '</span></span></a>';
+    }
+    var cards = MINS.map(function (m) {
+      var k = KIDS[m.id] || [], nd = k.filter(function (x) { return x.g === 'gouv'; }).length, ns = k.filter(function (x) { return x.g === 'adm'; }).length;
+      return '<li><a class="qgd-mcard" href="#min-' + m.id + '">' + photo(m, 44) + '<span><b>' + esc(m.n) + '</b><span>' + esc(m.f) + '</span><small>' +
+        (nd ? nd + (nd > 1 ? ' ministres délégués' : ' ministre délégué') + ' · ' : '') + ns + ' direction' + (ns > 1 ? 's' : '') + ' et services</small></span></a></li>';
+    }).join('');
+    var nk = (KIDS[PMIN.id] || []).filter(function (x) { return x.rank === 2; }).length;
+    return head({
+      crumbs: [["Budget de l'État 2026", '#budget'], ['Qui dirige']],
+      over: 'Qui dirige · au ' + REF,
+      h1: 'Qui dirige l\'État, et qui en répond',
+      lead: 'Le Président, le Gouvernement, les hauts fonctionnaires et le Parlement. Chaque fiche donne la fonction, la nomination au Journal officiel, le salaire fixé par les textes et les déclarations à la Haute Autorité pour la transparence de la vie publique.',
+      cta: '<a class="qg-btn qg-btn-primary" href="#cherche" data-scroll>Chercher une personne</a>',
+      stats: [
+        ['Membres du Gouvernement', String(NGOV), '', 'Premier ministre compris'],
+        ['Députés en fonction', String(CH.an.list.length), '', 'Sur ' + CH.an.seats + ' sièges'],
+        ['Sénateurs', String(CH.sen.list.length), '', 'Sénat, au ' + REF],
+        ['Hauts responsables', String(NADM + NPREF + CHECK.length), '', 'Directions, préfectures, autorités']
+      ]
+    }) + main(
+      sec({ id: 'cherche', over: 'Recherche', title: 'Trouver une personne', intro: 'Un nom, une fonction, un ministère, un département ou un groupe politique.' },
+        '<form class="qgd-find" id="who" role="search"><label class="qg-field">Nom, fonction, ministère ou département<input id="who-q" type="search" placeholder="Ex. Darmanin, directeur, Gironde, police" autocomplete="off"></label></form>' +
+        '<p class="qgd-count" id="who-n" role="status"></p><ul class="qgd-plist" id="who-r"></ul>') +
+      sec({ over: 'Pouvoir exécutif', title: 'La pyramide du pouvoir', intro: 'Le Président nomme le Premier ministre, puis les ministres sur sa proposition. Chaque ministre dirige des administrations, conduites par des hauts fonctionnaires nommés par décret.' },
+        '<ol class="qgd-pyr">' +
+        '<li><p class="qgd-pyr-lab">Élu au suffrage universel direct</p>' + tier(PRES, 'Chef de l\'État', '#pers-' + PRES.id) + '</li>' +
+        '<li><p class="qgd-pyr-lab">Nommé par le Président</p>' + tier(PMIN, 'Chef du Gouvernement · ' + nk + ' ministres délégués', '#min-' + PMIN.id) + '</li>' +
+        '<li><p class="qgd-pyr-lab">' + MINS.length + ' ministres, nommés sur proposition du Premier ministre</p><ul class="qgd-mgrid">' + cards + '</ul></li>' +
+        '<li><p class="qgd-pyr-lab">' + NADM + ' hauts fonctionnaires et directeurs de cabinet</p><p class="qg-caption qgd-pyr-note">Ouvrez un ministère pour voir qui dirige chacune de ses directions, et le texte du Journal officiel qui l\'a nommé.</p></li>' +
+        '<li><p class="qgd-pyr-lab">' + NPREF + ' préfets, l\'État dans chaque département et chaque région</p><a class="qg-btn qg-btn-secondary" href="#pref">Voir les préfets</a></li></ol>') +
+      sec({ over: 'Pouvoir législatif', title: 'Le Parlement', intro: 'Il vote le budget et contrôle le Gouvernement.' },
+        '<div class="qg-cards">' + ['an', 'sen'].map(function (g) {
+          var c = CH[g], s = seatsOf(c.list);
+          return '<a class="qg-card" href="#' + g + '"><p class="qg-overline">' + c.name + '</p><h3>' + c.list.length + ' ' + c.who + ' en fonction</h3><p class="qgd-card-p">' +
+            (g === 'an' ? 'Élus pour cinq ans au suffrage direct. ' + (c.seats - c.list.length) + ' sièges vacants sur ' + c.seats + '.' : 'Élus pour six ans au suffrage indirect, renouvelés par moitié.') +
+            ' ' + s.length + ' groupes politiques ; le plus nombreux : ' + esc(s[0].name) + ' (' + s[0].n + ').</p><span class="qg-card-more">Voir les ' + c.list.length + ' fiches →</span></a>';
+        }).join('') + '</div>') +
+      sec({ over: 'Contre-pouvoirs', title: 'Autorités indépendantes et institutions', intro: 'Elles contrôlent, jugent ou conseillent. Le Gouvernement ne peut pas leur donner d\'ordres.' },
+        pList(CHECK, function (p) { return p.f + ' · ' + p.o; }))
+    );
+  }
+  function bindPouvoir() {
+    var q = document.getElementById('who-q'), r = document.getElementById('who-r'), n = document.getElementById('who-n');
+    function draw() {
+      var words = fold(q.value).split(/\s+/).filter(Boolean);
+      if (!words.length) { r.innerHTML = ''; n.textContent = ''; return; }
+      var hit = PP.filter(function (p) { return p.g !== 'vac' && words.every(function (w) { return p.k.indexOf(w) >= 0; }); });
+      n.innerHTML = '<b>' + hit.length + '</b> personne' + (hit.length > 1 ? 's' : '') + (hit.length > 60 ? ', les 60 premières' : '');
+      r.innerHTML = hit.slice(0, 60).map(function (p) { return pRow(p, p.g === 'an' || p.g === 'sen' ? p.f + ' · ' + p.grp[0] : p.g === 'pref' ? p.f : p.f + (p.o && p.f.indexOf(p.o) < 0 ? ' · ' + p.o : '')); }).join('');
+    }
+    q.addEventListener('input', draw);
+    document.getElementById('who').addEventListener('submit', function (e) { e.preventDefault(); draw(); });
+  }
+
+  // Un ministère (ou la Présidence) : ministres délégués, cabinet, directions
+  function viewMin(id) {
+    var m = PBY[id];
+    if (!m || !(m.g === 'pr' || m.rank != null)) return null;
+    var k = KIDS[id] || [];
+    var del = k.filter(function (x) { return x.rank === 2 || x.g === 'vac'; });
+    var mins = k.filter(function (x) { return x.rank === 1 || x.rank === 0; });
+    var cab = k.filter(function (x) { return x.sal === 'cab'; });
+    var adm = k.filter(function (x) { return x.g === 'adm' && x.sal !== 'cab'; });
+    var npf = k.filter(function (x) { return x.g === 'pref'; }).length;
+    var title = m.g === 'pr' ? 'Présidence de la République' : m.rank === 0 ? 'Services du Premier ministre' : m.min;
+    var jo = k.filter(function (x) { return x.jo; }).length;
+    return head({
+      crumbs: [['Qui dirige', '#pouvoir'], [title]],
+      over: m.g === 'pr' ? 'Présidence' : 'Gouvernement · au ' + REF,
+      h1: esc(title), long: title.length > 48,
+      lead: 'Dirigé par <a class="qg-a" style="color:inherit" href="#pers-' + m.id + '">' + esc(m.n) + '</a>, ' + esc(lcFirst(m.f)) + '.',
+      stats: [
+        [m.g === 'pr' ? 'Premier ministre' : 'Ministres délégués', String(m.g === 'pr' ? mins.length : del.length), '', m.g === 'pr' ? 'Nommé par le Président' : 'Sous son autorité'],
+        ['Directions et services', String(adm.length), '', 'Avec un responsable nommé'],
+        ['Cabinet', String(cab.length), '', 'Directeur ou directrice de cabinet'],
+        ['Nominations publiées', String(jo), '', 'Au Journal officiel']
+      ]
+    }) + main(
+      sec({ over: 'Responsable politique', title: m.g === 'pr' ? 'Le Président' : 'Le ministre' }, '<ul class="qgd-plist">' + pRow(m) + '</ul>') +
+      (mins.length ? sec({ over: 'Gouvernement', title: m.g === 'pr' ? 'Le Premier ministre' : 'Les ' + mins.length + ' ministres' }, pList(mins)) : '') +
+      (del.length ? sec({ over: 'Gouvernement', title: 'Ministres délégués', intro: 'Ils exercent une partie des attributions du ministre, sous son autorité.' }, pList(del, function (x) { return x.g === 'vac' ? 'Sans titulaire · ' + x.f : x.f; })) : '') +
+      (cab.length ? sec({ over: 'Cabinet', title: 'Le cabinet', intro: 'Les conseillers choisis par le ministre. Leurs effectifs et salaires sont publiés chaque année en annexe du budget.' }, pList(cab, function (x) { return x.f + ' · ' + x.o; })) : '') +
+      (npf ? sec({ over: 'Dans les territoires', title: 'Les ' + npf + ' préfets', intro: 'Ils représentent l\'État dans chaque département et chaque région, sous l\'autorité du ministre de l\'Intérieur.' }, '<a class="qg-btn qg-btn-secondary" href="#pref">Voir les préfets</a>') : '') +
+      (adm.length ? sec({ over: 'Administration', title: 'Qui dirige chaque direction', intro: 'Le responsable de chaque direction ou service, tel que publié par l\'annuaire officiel de l\'administration.' }, pList(adm, function (x) { return x.f + ' · ' + x.o; })) : '')
+    );
+  }
+
+  // Assemblée nationale ou Sénat : groupes, filtres, toutes les fiches
+  var CF = { an: { q: '', grp: '', dep: '' }, sen: { q: '', grp: '', dep: '' } };
+  function viewChamber(g) {
+    var c = CH[g], s = seatsOf(c.list);
+    var deps = Array.from(new Set(c.list.map(function (p) { return p.dep; }))).sort(function (a, b) { return a.localeCompare(b, 'fr'); });
+    var spec = c.list.filter(function (p) { return p.roles; }).length;
+    return head({
+      crumbs: [['Qui dirige', '#pouvoir'], [c.name]],
+      over: 'Pouvoir législatif · au ' + REF,
+      h1: c.name,
+      lead: g === 'an' ? 'Les ' + c.list.length + ' députés en fonction, élus en 2024 ou depuis. Ouvrez une fiche pour voir son salaire, ses moyens et ses déclarations.' : 'Les ' + c.list.length + ' sénateurs en fonction. Ouvrez une fiche pour voir son salaire, ses moyens et ses déclarations.',
+      stats: [
+        [g === 'an' ? 'Députés' : 'Sénateurs', String(c.list.length), '', g === 'an' ? 'Sur ' + c.seats + ' sièges' : 'Données ouvertes du Sénat'],
+        ['Groupes politiques', String(s.length), '', 'Le plus nombreux : ' + esc(s[0].k)],
+        ['Indemnité brute', nf0.format(Math.floor(D.sal.dep.tot)), '€ / mois', 'Fixée par la loi, la même pour tous'],
+        [g === 'an' ? 'Avec une fonction en plus' : 'Au Bureau du Sénat', String(spec), '', g === 'an' ? 'Bureau ou présidence de commission' : 'Président, vice-présidents, questeurs, secrétaires']
+      ]
+    }) + main(
+      sec({ over: 'Composition', title: 'Les groupes politiques' },
+        bars(s.map(function (x) { return { label: esc(x.name), sub: esc(x.k), v: x.n, val: x.n + (x.n > 1 ? ' sièges' : ' siège') }; }))) +
+      sec({ id: 'liste', over: 'Annuaire', title: 'Toutes les fiches' },
+        '<form class="qgd-filters" id="ch-f" role="search">' +
+        '<label class="qg-field qgd-grow">Nom<input id="ch-q" type="search" autocomplete="off" placeholder="Nom ou prénom"></label>' +
+        '<label class="qg-field">Groupe<select id="ch-g"><option value="">Tous les groupes</option>' + s.map(function (x) { return '<option value="' + esc(x.k) + '">' + esc(x.k) + ' (' + x.n + ')</option>'; }).join('') + '</select></label>' +
+        '<label class="qg-field">' + (g === 'an' ? 'Département' : 'Circonscription') + '<select id="ch-d"><option value="">Tous</option>' + deps.map(function (d) { return '<option>' + esc(d) + '</option>'; }).join('') + '</select></label></form>' +
+        '<p class="qgd-count" id="ch-n" role="status"></p><ul class="qgd-plist" id="ch-r"></ul>')
+    );
+  }
+  function bindChamber(g) {
+    var f = CF[g], q = document.getElementById('ch-q'), sg = document.getElementById('ch-g'), sd = document.getElementById('ch-d');
+    q.value = f.q; sg.value = f.grp; sd.value = f.dep;
+    function draw() {
+      f.q = q.value; f.grp = sg.value; f.dep = sd.value;
+      var words = fold(f.q).split(/\s+/).filter(Boolean);
+      var r = CH[g].list.filter(function (p) {
+        return (!f.grp || p.grp[0] === f.grp) && (!f.dep || p.dep === f.dep) && words.every(function (w) { return fold(p.n).indexOf(w) >= 0; });
+      }).sort(function (a, b) { return fold(a.n.split(' ').slice(1).join(' ')).localeCompare(fold(b.n.split(' ').slice(1).join(' '))); });
+      document.getElementById('ch-n').innerHTML = '<b>' + r.length + '</b> ' + (r.length > 1 ? CH[g].who : CH[g].who.slice(0, -1)) + (r.length > 1 ? ', classés par nom' : '');
+      document.getElementById('ch-r').innerHTML = r.map(function (p) { return pRow(p, p.grp[0] + ' · ' + (g === 'an' ? p.f.split(' · ')[1] : p.dep)); }).join('');
+    }
+    q.addEventListener('input', draw); sg.addEventListener('change', draw); sd.addEventListener('change', draw);
+    document.getElementById('ch-f').addEventListener('submit', function (e) { e.preventDefault(); });
+    draw();
+  }
+
+  // Les préfets : un par département, filtres région et nom
+  var PF = { q: '', reg: '' };
+  function viewPref() {
+    var regs = Array.from(new Set(PREF.map(function (p) { return p.reg; }))).sort(function (a, b) { return a.localeCompare(b, 'fr'); });
+    var vac = PREF.length - NPREF, jo = PREF.filter(function (p) { return p.jo; }).length;
+    return head({
+      crumbs: [['Qui dirige', '#pouvoir'], ['Les préfets']],
+      over: 'Administration territoriale · au ' + REF,
+      h1: 'Les préfets',
+      lead: 'Le préfet représente l\'État dans le département : sécurité, ordre public, contrôle des collectivités, services de l\'État. Nommé en Conseil des ministres, il dépend du ministre de l\'Intérieur.',
+      stats: [
+        ['Préfets en fonction', String(NPREF), '', 'Départements, régions, outre-mer'],
+        ['Régions', String(regs.filter(function (r) { return r !== 'Outre-mer'; }).length), '', 'Plus l\'outre-mer'],
+        ['Postes sans titulaire', String(vac), '', 'Selon l\'annuaire officiel', true],
+        ['Nominations publiées', String(jo), '', 'Au Journal officiel']
+      ]
+    }) + main(
+      sec({ id: 'liste', over: 'Annuaire', title: 'Toutes les fiches', intro: 'Le préfet de région est aussi préfet du département chef-lieu : il n\'apparaît qu\'une fois.' },
+        '<form class="qgd-filters" id="pf-f" role="search">' +
+        '<label class="qg-field qgd-grow">Nom ou département<input id="pf-q" type="search" autocomplete="off" placeholder="Ex. Gironde, Brocas"></label>' +
+        '<label class="qg-field">Région<select id="pf-r"><option value="">Toutes</option>' + regs.map(function (r) { return '<option>' + esc(r) + '</option>'; }).join('') + '</select></label></form>' +
+        '<p class="qgd-count" id="pf-n" role="status"></p><ul class="qgd-plist" id="pf-l"></ul>')
+    );
+  }
+  function bindPref() {
+    var q = document.getElementById('pf-q'), sr = document.getElementById('pf-r');
+    q.value = PF.q; sr.value = PF.reg;
+    function draw() {
+      PF.q = q.value; PF.reg = sr.value;
+      var words = fold(PF.q).split(/\s+/).filter(Boolean);
+      var r = PREF.filter(function (p) { return (!PF.reg || p.reg === PF.reg) && words.every(function (w) { return p.k.indexOf(w) >= 0; }); })
+        .sort(function (a, b) { return a.dep.localeCompare(b.dep, 'fr'); });
+      document.getElementById('pf-n').innerHTML = '<b>' + r.length + '</b> ' + (r.length > 1 ? 'préfectures, classées par territoire' : 'préfecture');
+      document.getElementById('pf-l').innerHTML = r.map(function (p) { return pRow(p, p.g === 'vac' ? 'Sans titulaire · ' + p.dep : p.f + (p.f2 ? ' ; ' + lcFirst(p.f2) : '')); }).join('');
+    }
+    q.addEventListener('input', draw); sr.addEventListener('change', draw);
+    document.getElementById('pf-f').addEventListener('submit', function (e) { e.preventDefault(); });
+    draw();
+  }
+
+  // Salaire : lignes officielles ou null si non publié
+  function pay(p) {
+    var S = D.sal, rows, tot, net = null, src;
+    if (p.sal === 'dep' || p.sal === 'sen') {
+      rows = S.dep.rows.slice(); tot = S.dep.tot;
+      if (p.spec) { rows.push(['Indemnité spéciale : ' + lcFirst(p.roles[0]), p.spec]); tot += p.spec; }
+      if (p.sal === 'dep' && !p.spec) net = S.dep.net;
+      src = p.sal === 'dep'
+        ? 'Assemblée nationale, <a class="qg-a" href="' + AN_FICHE + '" target="_blank" rel="noopener">fiche n° 7 « La situation matérielle du député »</a>, janvier 2026.'
+        : 'La loi organique fixe la même indemnité pour les sénateurs et les députés (ordonnance n° 58-1210 du 13 décembre 1958). Montants : <a class="qg-a" href="' + AN_FICHE + '" target="_blank" rel="noopener">fiche n° 7 de l\'Assemblée nationale</a>, janvier 2026. Les indemnités de fonction propres au Bureau du Sénat ne sont pas reprises ici.';
+    } else if (p.sal === 'min' || p.sal === 'pm' || p.sal === 'pr') {
+      var x = p.sal === 'min' ? S.min : S.pm;
+      rows = x.rows; tot = x.tot;
+      src = 'Calcul fixé par la loi de finances rectificative pour 2002 et le décret n° 2012-983 du 23 août 2012, sur la base de l\'indemnité parlementaire de janvier 2026. ' + (p.sal === 'min' ? 'Ministres et ministres délégués touchent le même montant.' : 'Le Président et le Premier ministre touchent le même montant.') + ' Le résultat est celui publié par Public Sénat le 9 septembre 2026.';
+    } else return null;
+    return { rows: rows, tot: tot, net: net, src: src };
+  }
+  function perks(p) {
+    if (p.sal === 'dep') return [
+      '<b>Frais de mandat</b> : 7 238,04 € par mois (dotation de fonctionnement, élus de métropole) pour la permanence, les taxis, le matériel et le courrier.',
+      '<b>Collaborateurs</b> : 11 463 € par mois pour payer jusqu\'à cinq collaborateurs ; les charges sont payées en plus par l\'Assemblée.',
+      '<b>Train</b> : trajets SNCF pris en charge, en 1re ou en 2de classe.',
+      '<b>Avion</b> (élus de métropole) : 80 trajets par an entre Paris et la circonscription, et 12 vers d\'autres destinations en France.',
+      '<b>Logement à Paris</b> : chambre de la résidence de l\'Assemblée, hôtel jusqu\'à 200 € la nuit, ou loyer remboursé jusqu\'à 1 200 € par mois.',
+      '<b>Sur place</b> : bureau au Palais-Bourbon, téléphone du bureau, 20 000 photocopies par an, passe Navigo pour les élus d\'Île-de-France.',
+      '<b>Enfants</b> : allocation de garde de 323,76 € par mois par enfant de moins de trois ans.',
+      '<b>Après le mandat</b> : s\'il n\'est pas réélu et cherche un emploi, allocation de 4 353,31 € brut par mois (57 % de l\'indemnité), 18 mois au plus.'];
+    if (p.sal === 'sen') return [
+      '<b>Collaborateurs</b> : 8 827,40 € brut par mois pour payer jusqu\'à cinq collaborateurs (valeur au 1er juillet 2023, la dernière publiée par le Sénat).',
+      '<b>Frais de mandat</b> : remboursés sur justificatifs depuis le 1er janvier 2018, selon les règles du Bureau du Sénat. Le montant n\'est pas publié sur la page officielle.',
+      'Source : <a class="qg-a" href="' + SEN_MOYENS + '" target="_blank" rel="noopener">« Les moyens mis à la disposition des sénateurs »</a>, senat.fr.'];
+    if (p.g === 'gouv' || p.g === 'pr') return ['Aucune liste officielle des avantages par personne n\'est publiée (logement, voiture, sécurité).', 'Ses intérêts et son patrimoine sont déclarés à la Haute Autorité pour la transparence de la vie publique : voir plus bas.'];
+    if (p.sal === 'cab') return ['Non publiés par personne. Les effectifs et les salaires des cabinets ministériels sont publiés chaque année en annexe du projet de loi de finances (« Personnels affectés dans les cabinets ministériels »).'];
+    if (p.g === 'pref') return ['Non publiés par personne. Le préfet est logé dans la résidence de la préfecture, par nécessité absolue de service.'];
+    if (p.g === 'adm') return ['Non publiés par personne. Chaque administration publie chaque année la somme des dix rémunérations les plus élevées de ses agents (loi n° 2019-828 du 6 août 2019, article 37).'];
+    return ['Non publiés par personne.'];
+  }
+  // Lettre de mission : [statut, explication, demandable ?]
+  function mission(p) {
+    if (p.g === 'an' || p.g === 'sen') return ['Sans objet', 'Un parlementaire n\'a pas de lettre de mission : il est élu et ne reçoit d\'instructions de personne.', false];
+    if (p.g === 'pr') return ['Sans objet', 'Le Président est élu au suffrage universel direct. Ses pouvoirs sont fixés par la Constitution.', false];
+    if (p.g === 'aai' || p.g === 'inst') return ['Sans objet', 'Une autorité indépendante ou une institution ne reçoit pas d\'instructions du Gouvernement. Ses missions sont fixées par la loi.', false];
+    if (p.g === 'pref') return ['Non publiée', 'Chaque préfet reçoit une lettre de mission à sa nomination. Elle n\'est pas publiée, mais vous pouvez la demander à la préfecture.', true];
+    if (p.rank === 0) return ['Non publiée', 'Les priorités du Premier ministre sont présentées dans sa déclaration de politique générale devant l\'Assemblée nationale.', false];
+    if (p.g === 'gouv') return ['Non publiée', 'Le Premier ministre adresse une lettre de mission à chaque ministre. Elle n\'est pas publiée. Ses compétences sont fixées par un décret d\'attributions, publié au Journal officiel.', true];
+    return ['Non publiée', 'Les directeurs d\'administration centrale reçoivent une lettre de mission à leur nomination. Elle n\'est pas publiée, mais vous pouvez la demander.', true];
+  }
+  function letterMission(p, nom, mail) {
+    var who = nom || '[Votre nom et prénom]', gov = p.g === 'gouv';
+    var dest = gov ? ['À l\'attention du secrétariat général du Gouvernement', 'Services du Premier ministre'] : p.g === 'pref' ? ['À l\'attention du secrétariat général', p.o] : ['À l\'attention du secrétariat général', (chief(p) || {}).min || p.o];
+    return {
+      who: who, mail: mail || '[Votre adresse électronique]', to: dest,
+      obj: 'Objet : demande de communication d\'un document administratif, lettre de mission de ' + civName(p),
+      body: ['Madame, Monsieur,',
+        'En application des articles L. 300-1, L. 300-2 et L. 311-1 du code des relations entre le public et l\'administration, je vous demande de me communiquer, par courrier électronique, les documents suivants concernant ' + civName(p) + ', ' + lcFirst(p.f) + (p.o && p.f.indexOf(p.o) < 0 && !gov ? ' (' + p.o + ')' : '') + ' :',
+        [gov ? 'La lettre de mission que le Premier ministre lui a adressée, et ses éventuelles mises à jour.' : 'La lettre de mission qui lui a été adressée lors de sa nomination, et ses éventuelles mises à jour.',
+         'Les objectifs qui lui ont été fixés pour l\'année en cours.'],
+        'Les mentions dont la communication porterait atteinte à un secret protégé par la loi peuvent être occultées, conformément aux articles L. 311-5 à L. 311-7 du même code.',
+        'Je vous prie d\'agréer, Madame, Monsieur, l\'expression de mes salutations distinguées.']
+    };
+  }
+  function viewPerson(id) {
+    var p = PBY[id];
+    if (!p) return null;
+    var boss = chief(p), up = p.par && PBY[p.par];
+    var crumbs = [['Qui dirige', '#pouvoir']];
+    if (p.g === 'an' || p.g === 'sen') crumbs.push([CH[p.g].name, '#' + p.g]);
+    else if (boss && boss !== p) crumbs.push([boss.g === 'pr' ? 'Présidence de la République' : boss.rank === 0 ? 'Services du Premier ministre' : boss.min, '#min-' + boss.id]);
+    else if (p.rank != null) crumbs.push([p.rank === 0 ? 'Services du Premier ministre' : p.min, '#min-' + p.id]);
+    if (p.g === 'pref' || p.vt === 'pref') crumbs.push(['Les préfets', '#pref']);
+    crumbs.push([p.n]);
+    if (p.g === 'vac') {
+      return head({ crumbs: crumbs, over: (p.vt === 'pref' ? 'Préfets' : 'Gouvernement') + ' · au ' + REF, h1: 'Poste sans titulaire', long: false, lead: esc(p.f) + '.', stats: [['Titulaire', 'Aucun', '', 'Annuaire officiel de l\'administration', true]] }) +
+        main(sec({ over: 'Ce que disent les sources', title: 'Pourquoi ce poste est vide' },
+          '<p class="qgd-none">L\'annuaire officiel de l\'administration ne donne aucun titulaire pour ce poste au ' + REF + '.' +
+          (p.note === 'ruralite' ? ' Michel Fournier, nommé par le décret du 26 février 2026, a annoncé le 17 septembre 2026 son départ du Gouvernement.' : '') + '</p>' +
+          (p.sp ? '<p class="qg-caption"><a class="qg-a" href="' + esc(p.sp) + '" target="_blank" rel="noopener">Voir la fiche du poste sur l\'annuaire de l\'administration</a></p>' : '')));
+    }
+    var P = pay(p), M = mission(p), roles = p.roles ? p.roles.join(' · ') : '';
+    var facts = [
+      ['Fonction', esc(p.f) + (p.f2 ? '<br>' + esc(p.f2) : '')],
+      p.o && p.f.indexOf(p.o) < 0 ? ['Rattachement', esc(p.o)] : null,
+      roles ? ['Fonction en plus', esc(roles)] : null,
+      p.grp ? ['Groupe politique', esc(p.grp[1]) + ' <span class="qg-code">' + esc(p.grp[0]) + '</span>'] : null,
+      p.com ? ['Commission', esc(p.com.charAt(0).toUpperCase() + p.com.slice(1))] : null,
+      p.since ? ['En fonction depuis le', dateLong(p.since)] : null,
+      p.prof ? ['Profession déclarée', esc(p.prof)] : null,
+      p.grade ? ['Grade', esc(p.grade)] : null,
+      p.jo ? ['Nomination', '<a href="' + esc(p.jo[1]) + '" target="_blank" rel="noopener">' + esc(p.jo[0]) + '</a>'] : null,
+      up ? ['Sous l\'autorité de', '<a href="#pers-' + up.id + '">' + esc(up.n) + '</a>, ' + esc(lcFirst(up.f))] : null,
+      p.page ? ['Page officielle', '<a href="' + esc(p.page) + '" target="_blank" rel="noopener">' + (p.g === 'an' ? 'assemblee-nationale.fr' : 'senat.fr') + '</a>'] : null,
+      p.sp ? ['Annuaire officiel', '<a href="' + esc(p.sp) + '" target="_blank" rel="noopener">lannuaire.service-public.gouv.fr</a>'] : null
+    ].filter(Boolean).map(function (x) { return '<dt>' + x[0] + '</dt><dd>' + x[1] + '</dd>'; }).join('');
+    var under = KIDS[p.id] || [];
+    var ct = p.ct || {}, boss2 = boss && boss.ct ? boss.ct : {};
+    var to = M[2] ? (ct.mail || '') : '';
+    var form = ct.form || boss2.form || '';
+    var srcLine = p.g === 'an' ? 'Assemblée nationale, données ouvertes au ' + REF : p.g === 'sen' ? 'Sénat, données ouvertes au ' + REF : p.g === 'pref' ? '<a class="qg-a" href="' + LOCAL + '" target="_blank" rel="noopener">Annuaire des services locaux de l\'État</a> (DILA), au ' + REF : '<a class="qg-a" href="' + ANNUAIRE + '" target="_blank" rel="noopener">Référentiel de l\'organisation administrative de l\'État</a> (DILA), au ' + REF;
+    return head({
+      crumbs: crumbs,
+      over: esc(p.g === 'an' ? 'Assemblée nationale' : p.g === 'sen' ? 'Sénat' : p.g === 'pr' ? 'Présidence de la République' : p.g === 'gouv' ? 'Gouvernement' : p.g === 'aai' ? 'Autorité indépendante' : p.g === 'inst' ? 'Institution' : p.g === 'pref' ? 'Préfecture' : 'Haute fonction publique'),
+      h1: esc(p.n),
+      lead: esc(p.f) + (p.f2 ? ' ; ' + esc(lcFirst(p.f2)) : '') + '.',
+      cta: M[2] ? '<a class="qg-btn qg-btn-primary" href="#lettre" data-scroll>Demander sa lettre de mission</a>' : '',
+      stats: [
+        ['Salaire brut par mois', P ? nf0.format(Math.floor(P.tot)) : 'Non publié', P ? '€' : '', P ? 'Fixé par les textes' : 'Pas de montant par personne', !P],
+        ['Lettre de mission', M[0], '', M[2] ? 'Vous pouvez la demander' : 'Voir l\'explication plus bas', true],
+        ['Déclarations HATVP', p.ht ? String(p.ht[1]) : '0', '', p.ht ? (p.ht[2] ? 'Dernière publiée le ' + dateFr(p.ht[2]) : 'Dossier ouvert, publication à venir') : 'Aucune sous ce nom'],
+        p.grp ? ['Groupe', esc(p.grp[0]), '', esc(p.grp[1]), true] : ['Nomination', p.jo ? 'Publiée' : '—', '', p.jo ? esc(p.jo[0]) : 'Texte non indiqué', true]
+      ]
+    }) + main(
+      '<section class="qgd-who"><div style="flex:0 0 auto">' + photo(p, 96) + (p.ph != null ? '<p class="qg-caption" style="margin-top:8px">Photo officielle</p>' : '') + '</div>' +
+        '<div class="qgd-sec"><h2>La fiche</h2><dl class="qg-facts">' + facts + '</dl><p class="qg-caption">Source : ' + srcLine + '.</p></div></section>' +
+      (DECOF[p.id] ? sec({ over: 'Pouvoir de décision', title: 'Ce qu\'' + (p.civ === 'Mme' ? 'elle' : 'il') + ' décide' }, '<ul class="qgd-list">' + DECOF[p.id].map(function (x) { return '<li><a class="qg-a" href="' + x[1] + '">' + esc(x[0]) + '</a> <span class="qgd-muted">· ' + esc(x[2]) + '</span></li>'; }).join('') + '</ul>') : '') +
+      cvSec(p) +
+      sec({ id: 'salaire', over: 'Argent public', title: 'Son salaire' },
+        P ? '<div class="qg-table-wrap" style="max-width:640px"><table class="qg-table qgd-sal"><tbody>' + P.rows.map(function (r) { return '<tr><td>' + esc(r[0]) + '</td><td class="qg-r qg-amt">' + (r[1] < 0 ? '− ' + eur2(-r[1]) : eur2(r[1])) + '</td></tr>'; }).join('') +
+          '<tr class="qgd-tot"><td>Total brut par mois</td><td class="qg-r qg-amt">' + eur2(P.tot) + '</td></tr>' + (P.net ? '<tr><td>Net par mois, avant impôt sur le revenu</td><td class="qg-r qg-amt">' + eur2(P.net) + '</td></tr>' : '') + '</tbody></table></div><p class="qg-caption qgd-measure">' + P.src + '</p>'
+          : '<p class="qgd-none">Le salaire de ' + esc(civName(p)) + ' n\'est pas publié. ' + (p.g === 'adm' || p.g === 'pref' ? 'La loi n\'oblige à publier que la somme des dix plus hautes rémunérations de chaque administration.' : 'Aucun texte n\'oblige à le publier par personne.') + '</p>') +
+      sec({ over: 'Argent public', title: p.g === 'an' || p.g === 'sen' ? 'Ses moyens et avantages' : 'Ses avantages en nature' },
+        '<ul class="qgd-list">' + perks(p).map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul>' + (p.sal === 'dep' ? '<p class="qg-caption qgd-measure">Source : <a class="qg-a" href="' + AN_FICHE + '" target="_blank" rel="noopener">Assemblée nationale, fiche n° 7</a>, janvier 2026. Ces moyens servent au mandat : ce n\'est pas un revenu personnel.</p>' : '')) +
+      sec({ over: 'Transparence', title: 'Patrimoine et intérêts' },
+        p.ht ? '<p class="qgd-measure" style="margin:0">La Haute Autorité pour la transparence de la vie publique publie ' + (p.ht[1] ? p.ht[1] + ' déclaration' + (p.ht[1] > 1 ? 's' : '') + ' de ' + esc(civName(p)) : 'le dossier de ' + esc(civName(p))) + ' : intérêts, activités, et pour certains mandats, patrimoine.</p><p style="margin:0"><a class="qg-btn qg-btn-secondary" href="' + esc(p.ht[0]) + '" target="_blank" rel="noopener">Voir ses déclarations sur hatvp.fr</a></p>'
+          : '<p class="qgd-none">Aucune déclaration trouvée sous ce nom dans la liste publiée par la Haute Autorité pour la transparence de la vie publique. ' + (p.g === 'adm' || p.g === 'pref' ? 'Seuls certains emplois de direction y sont soumis, et leurs déclarations ne sont pas toutes rendues publiques.' : '') + '</p>') +
+      sec({ id: 'lettre', over: 'Lettre de mission', title: M[2] ? 'Demander sa lettre de mission' : 'Sa lettre de mission : ' + lcFirst(M[0]), intro: M[1] },
+        M[2] ? letterForm(form ? '<p class="qg-caption">' + (to ? '' : 'Pas d\'adresse électronique publiée : ') + '<a class="qg-a" href="' + esc(form) + '" target="_blank" rel="noopener">formulaire de contact officiel</a> du service.</p>' : '') : '') +
+      (under.length ? sec({ over: 'Sous son autorité', title: under.length + ' personne' + (under.length > 1 ? 's' : '') + ' dans cet annuaire' }, pList(under, function (x) { return x.g === 'vac' ? 'Sans titulaire · ' + x.f : x.f; })) : '')
+    );
+  }
+  function bindPerson(id) {
+    var p = PBY[id];
+    if (p && p.g !== 'vac' && mission(p)[2]) bindLetter(function (n, m) { return letterMission(p, n, m); }, (p.ct || {}).mail || '');
+  }
+
+  /* ---------- Navigation ---------- */
+  var tabsOf = { budget: 'budget', mission: 'mission', prog: 'mission', contrats: 'contrats', contrat: 'contrats', methode: 'methode', pouvoir: 'pouvoir', min: 'pouvoir', ch: 'pouvoir', pref: 'pouvoir', pers: 'pouvoir' };
+  var ask = document.getElementById('ask'), first = true;
+  function route() {
+    var h = (location.hash || '#budget').slice(1), m, html = null, kind, bind = null;
+    if (h === 'mission') { kind = 'mission'; html = viewMission(); }
+    else if ((m = h.match(/^p(\d{3})$/)) && (html = viewProg(m[1]))) { kind = 'prog'; }
+    else if (h === 'contrats') { kind = 'contrats'; html = viewContrats(); bind = bindContrats; }
+    else if ((m = h.match(/^contrat-(\d+)$/)) && C[+m[1]]) { kind = 'contrat'; html = viewContrat(+m[1]); bind = function () { bindContrat(+m[1]); }; }
+    else if (h === 'methode') { kind = 'methode'; html = viewMethode(); }
+    else if (h === 'pouvoir') { kind = 'pouvoir'; html = viewPouvoir(); bind = bindPouvoir; }
+    else if ((m = h.match(/^min-(\w+)$/)) && (html = viewMin(m[1]))) { kind = 'min'; }
+    else if (h === 'pref') { kind = 'pref'; html = viewPref(); bind = bindPref; }
+    else if (h === 'an' || h === 'sen') { kind = 'ch'; html = viewChamber(h); bind = function () { bindChamber(h); }; }
+    else if ((m = h.match(/^pers-(\w+)$/)) && (html = viewPerson(m[1]))) { kind = 'pers'; bind = function () { bindPerson(m[1]); }; }
+    if (!html) { kind = 'budget'; html = viewBudget(); bind = bindBudget; tmW = 0; }
+    app.innerHTML = html;
+    if (bind) bind();
+    document.querySelectorAll('.qg-nav a[data-tab]').forEach(function (a) { if (a.dataset.tab === tabsOf[kind]) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+    if (kind === 'contrat') { ask.setAttribute('href', '#demande'); ask.setAttribute('data-scroll', ''); } else { ask.setAttribute('href', '#contrats'); ask.removeAttribute('data-scroll'); }
+    if (!first) { window.scrollTo(0, 0); var h1 = app.querySelector('h1'); if (h1) h1.focus({ preventScroll: true }); }
+    first = false;
+  }
+  // Ancres internes (#tableau, #demande) : on fait défiler sans changer d'écran. Lignes de tableau : cliquables en entier.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[data-scroll]');
+    if (a) {
+      var t = document.getElementById(a.getAttribute('href').slice(1));
+      if (t) { e.preventDefault(); t.scrollIntoView(); var f = t.querySelector('input'); if (f) f.focus({ preventScroll: true }); }
+      return;
+    }
+    var tr = e.target.closest('tr[data-href]');
+    if (tr && !e.target.closest('a, button')) location.hash = tr.getAttribute('data-href');
+  });
+  window.addEventListener('hashchange', route);
+  route();
+})();
+</script>
